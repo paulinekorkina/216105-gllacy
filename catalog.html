@@ -91,7 +91,62 @@
     <main class="container">
       <h1>Сливочное мороженое</h1>
       <section class="filter">
-
+        <div class="sorting">
+          <label for="sorting-id">Сортировка:</label>
+          <select id="sorting-id" name="sorting">
+            <option value="best-selling">по популярности</option>
+            <option value="low-price">сначала недорогие</option>
+            <option value="high-price">сначала дорогие</option>
+            <option value="fatness">по жирности</option>
+          </select>
+        </div>
+        <div class="range">
+          <p>Цена: 100 руб. - 500 руб.</p>
+          <div class="range-bar"></div>
+        </div>
+        <div class="fatness">
+          <p>Жирность:</p>
+          <label>
+            <input type="radio" name="fatness" value="0">
+            0%
+          </label>
+          <label>
+            <input type="radio" name="fatness" value="below-10" checked>
+            до 10%
+          </label>
+          <label>
+            <input type="radio" name="fatness" value="below-30">
+            до 30%
+          </label>
+          <label>
+            <input type="radio" name="fatness" value="above-30">
+            выше 30%
+          </label>
+        </div>
+        <div class="topping">
+          <p>Наполнители:</p>
+          <label>
+            <input type="checkbox" name="chocolate" checked>
+            шоколадные
+          </label>
+          <label>
+            <input type="checkbox" name="sugar" checked>
+            сахарные присыпки
+          </label>
+          <label>
+            <input type="checkbox" name="fruits">
+            фрукты
+          </label>
+          <label>
+            <input type="checkbox" name="syrup">
+            сиропы
+          </label>
+          <label>
+            <input type="checkbox" name="jam">
+            джемы
+          </label>
+        </div>
+        <button class="btn" type="submit">Применить</button>
       </section>
       <section class="gallery">
         <article class="gallery-item">
@@ -166,10 +221,15 @@
           <p class="item-name">Сливочное с мятным сиропом</p>
           <button class="btn">Быстрый просмотр</button>
         </article>
-
       </section>
       <div class="paginator">
-
+        <a class="prev" href="#">Назад</a>
+        <a class="current" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a class="next" href="#">Вперед</a>
       </div>
     </main>
     <footer class="main-footer">
