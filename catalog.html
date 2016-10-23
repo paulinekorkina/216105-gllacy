@@ -52,14 +52,14 @@
                     <table>
                       <tr>
                         <td class="cart-delete"></td>
-                        <td class="cart-img"><img src="http://placehold.it/33x3" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
+                        <td class="cart-img"><img src="http://placehold.it/33x33" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
                         <td class="cart-name">Пломбир с апельсиновым джемом</td>
                         <td class="cart-quantity">1,5кг x 200 руб.</td>
                         <td class="cart-item-total">300 руб.</td>
                       </tr>
                       <tr>
                         <td class="cart-delete"></td>
-                        <td class="cart-img"><img src="http://placehold.it/33x3" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
+                        <td class="cart-img"><img src="http://placehold.it/33x33" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
                         <td class="cart-name">Клубничный пломбир с присыпкой из белого шоколада</td>
                         <td class="cart-quantity">1,5кг x 300 руб.</td>
                         <td class="cart-item-total">450 руб.</td>
@@ -75,78 +75,78 @@
             </div>
           </div>
         </div>
-        <div class="breadcrumbs-contacts">
-          <div class="breadcrumbs">
-            <a href="#">Главная</a>
-            <a href="#">Каталог</a>
-            <span>Сливочное</span>
-          </div>
-          <div class="contacts">
-            <p class="contacts-schedule">С 10 до 20, ежедневно</p>
-            <p class="contacts-phone">8 812 450-25-25</p>
-          </div>
+        <div class="contacts">
+          <p class="contacts-schedule">С 10 до 20, ежедневно</p>
+          <p class="contacts-phone">8 812 450-25-25</p>
         </div>
       </div>
     </header>
     <main class="container">
+      <div class="breadcrumbs">
+        <a href="#">Главная</a>
+        <a href="#">Каталог</a>
+        <span>Сливочное</span>
+      </div>
       <h1>Сливочное мороженое</h1>
       <section class="filter">
-        <div class="sorting">
-          <label for="sorting-id">Сортировка:</label>
-          <select id="sorting-id" name="sorting">
-            <option value="best-selling">по популярности</option>
-            <option value="low-price">сначала недорогие</option>
-            <option value="high-price">сначала дорогие</option>
-            <option value="fatness">по жирности</option>
-          </select>
-        </div>
-        <div class="range">
-          <p>Цена: 100 руб. - 500 руб.</p>
-          <div class="range-bar"></div>
-        </div>
-        <div class="fatness">
-          <p>Жирность:</p>
-          <label>
-            <input type="radio" name="fatness" value="0">
-            0%
-          </label>
-          <label>
-            <input type="radio" name="fatness" value="below-10" checked>
-            до 10%
-          </label>
-          <label>
-            <input type="radio" name="fatness" value="below-30">
-            до 30%
-          </label>
-          <label>
-            <input type="radio" name="fatness" value="above-30">
-            выше 30%
-          </label>
-        </div>
-        <div class="topping">
-          <p>Наполнители:</p>
-          <label>
-            <input type="checkbox" name="chocolate" checked>
-            шоколадные
-          </label>
-          <label>
-            <input type="checkbox" name="sugar" checked>
-            сахарные присыпки
-          </label>
-          <label>
-            <input type="checkbox" name="fruits">
-            фрукты
-          </label>
-          <label>
-            <input type="checkbox" name="syrup">
-            сиропы
-          </label>
-          <label>
-            <input type="checkbox" name="jam">
-            джемы
-          </label>
-        </div>
-        <a class="btn" href="#">Применить</a>
+        <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
+          <div class="sorting">
+            <label for="sorting-id">Сортировка:</label>
+            <select id="sorting-id" name="sorting">
+              <option value="best-selling">по популярности</option>
+              <option value="low-price">сначала недорогие</option>
+              <option value="high-price">сначала дорогие</option>
+              <option value="fatness">по жирности</option>
+            </select>
+          </div>
+          <div class="range">
+            <p>Цена: 100 руб. - 500 руб.</p>
+            <div class="range-bar"></div>
+          </div>
+          <div class="fatness">
+            <p>Жирность:</p>
+            <label>
+              <input type="radio" name="fatness" value="0">
+              0%
+            </label>
+            <label>
+              <input type="radio" name="fatness" value="below-10" checked>
+              до 10%
+            </label>
+            <label>
+              <input type="radio" name="fatness" value="below-30">
+              до 30%
+            </label>
+            <label>
+              <input type="radio" name="fatness" value="above-30">
+              выше 30%
+            </label>
+          </div>
+          <div class="topping">
+            <p>Наполнители:</p>
+            <label>
+              <input type="checkbox" name="chocolate" checked>
+              шоколадные
+            </label>
+            <label>
+              <input type="checkbox" name="sugar" checked>
+              сахарные присыпки
+            </label>
+            <label>
+              <input type="checkbox" name="fruits">
+              фрукты
+            </label>
+            <label>
+              <input type="checkbox" name="syrup">
+              сиропы
+            </label>
+            <label>
+              <input type="checkbox" name="jam">
+              джемы
+            </label>
+          </div>
+          <a class="btn" href="#">Применить</a>
+        </form>
       </section>
       <section class="gallery">
         <article class="gallery-item">
