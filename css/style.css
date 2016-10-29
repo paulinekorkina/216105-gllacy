@@ -1,10 +1,20 @@
+html,
 body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 16px;
   line-height: 22px;
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
-  background-color: #849d8f;
+/*  background-color: #849d8f;*/
 }
 
 h1 {
@@ -15,10 +25,194 @@ h1 {
   font-family: "Roboto", "Arial", sans-serif;
 }
 
+h2 {
+  font-size: 16px;
+  line-height: 22px;
+  font-color: #ffffff;
+  font-weight: 400;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
 h3 {
   font-size: 24px;
   line-height: 30px;
   color: #323232;
   font-weight: 400;
   font-family: "Roboto", "Arial", sans-serif;
+}
+
+div,
+section,
+ul {
+  outline: 1px dashed orangered;
+}
+
+h2,
+h3,
+b,
+a,
+li {
+  outline: 1px dashed #555555;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 846px;
+  max-width: 1146px;
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+header {
+  margin-bottom: 10px;
+  background-color: #ffd9a0; /*для построения сетки*/
+}
+
+.header-top {
+  display: flex;
+}
+
+.index-logo {
+  padding-top: 10px;
+  padding-left: -7px;
+}
+
+.main-navigation {
+  flex-grow: 1;
+  padding-top: 15px;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+}
+
+.main-menu > li {
+  margin-right: 28px;
+}
+
+.main-menu .sub-menu {
+  display: none;
+  list-style: none;
+}
+
+.main-menu > li:hover .sub-menu {
+  display: block;
+  position: absolute;
+}
+
+.user-block {
+  display: flex;
+  padding-top: 23px;
+}
+
+.search-field,
+.login-window {
+  display: none;
+}
+
+.search-btn {
+  margin-right: 10px;
+}
+
+.login {
+  margin-right: 10px;
+}
+
+.contacts {
+  position: relative;
+  align-self: flex-end;
+  height: 0;
+}
+
+.contacts-absolute {
+  position: absolute;
+  top: -27px;
+  left: -168px;
+}
+
+main {
+  flex-grow: 1;
+  background-color: #feecd4; /*для построения сетки*/
+}
+
+.slider {
+  margin-bottom: 40px;
+}
+
+.bonus {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.bonus-item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 560px;
+  flex-shrink: 1;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.bonus-item-left {
+  margin-right: 27px;
+}
+
+.bonus-item p {
+  margin-bottom: 45px;
+}
+
+.bonus-item a {
+  display: block;
+  width: 166px;
+  height: 50px;
+  align-self: flex-end;
+}
+
+.hit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  flex-basis: 267px;
+  flex-shrink: 1;
+}
+
+.gallery-item p {
+  position: absolute;
+  top: 220px;
+  z-index: 1;
+}
+
+.gallery-item .item-name {
+  text-align: center;
+}
+
+.gallery-item button {
+  display: none;
+}
+
+.features {
+  margin-bottom: 40px;
+}
+
+.news-subscribe {
+  margin-bottom: 40px;
+}
+
+footer {
+  background-color: #ecc7b4; /*для построения сетки*/
+
+}
+
+.feedback {
+  display: none;
 }
