@@ -5,6 +5,20 @@ body {
   padding: 0;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src:
+        local("Roboto Regular"),
+        url("../fonts/roboto.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src:
+        local("Roboto Medium"),
+        url("../fonts/robotomedium.woff") format("woff");
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -28,7 +42,7 @@ h1 {
 h2 {
   font-size: 16px;
   line-height: 22px;
-  font-color: #ffffff;
+  color: #ffffff;
   font-weight: 400;
   font-family: "Roboto", "Arial", sans-serif;
 }
@@ -76,17 +90,26 @@ header {
 }
 
 .index-logo {
-  padding-top: 10px;
-  padding-left: -7px;
+  padding-top: 9px;
+  margin-left: -6px;
 }
 
 .main-navigation {
   flex-grow: 1;
-  padding-top: 15px;
+  align-self: center;
+  padding-left: 0;
+}
+
+.main-navigation a {
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .main-menu {
   display: flex;
+  margin-left: -10px;
   list-style: none;
 }
 
@@ -106,7 +129,14 @@ header {
 
 .user-block {
   display: flex;
-  padding-top: 23px;
+  align-self: center;
+}
+
+.user-block a {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+  color: #ffffff;
 }
 
 .search-field,
@@ -115,11 +145,33 @@ header {
 }
 
 .search-btn {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
   margin-right: 10px;
+  align-self: center;
+  outline: 1px dotted #333333; /*вместо иконки*/
 }
 
 .login {
+  display: inline-block;
+  width: 60px;
+  height: 32px;
   margin-right: 10px;
+  padding-left: 16px;
+  padding-top: 14px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+.cart {
+  display: inline-block;
+  width: 107px;
+  height: 32px;
+  padding-top: 14px;
+  padding-left: 10px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .contacts {
@@ -130,8 +182,25 @@ header {
 
 .contacts-absolute {
   position: absolute;
-  top: -27px;
-  left: -168px;
+  top: -20px;
+  left: -165px;
+}
+
+.contacts-schedule {
+  margin-bottom: -18px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: right;
+}
+
+.contacts-phone {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #ffffff;
 }
 
 main {
@@ -140,7 +209,7 @@ main {
 }
 
 .slider {
-  height: 570px; /*для имитации высоты слайдера*/
+  height: 518px; /*для имитации высоты слайдера*/
   margin-bottom: 40px;
 }
 
