@@ -225,7 +225,8 @@ main {
 .bonus-item {
   display: flex;
   flex-direction: column;
-  flex-basis: 560px;
+  flex-basis: 420px;
+  flex-grow: 1;
   flex-shrink: 1;
   padding-top: 16px;
   padding-left: 20px;
@@ -377,13 +378,75 @@ main {
 
 .news,
 .subscribe {
-  flex-basis: 540px;
+  flex-basis: 420px;
   flex-shrink: 1;
   flex-grow: 1;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .news {
   margin-right: 27px;
+  padding-top: 7px;
+}
+
+.news-title {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+}
+
+.news-preview {
+  display: inline-block;
+  max-width: 283px;
+  margin-top: -11px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #323232;
+  text-decoration: underline;
+}
+
+.subscribe {
+  flex-basis: 408px;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  border: 6px solid #92cdff;
+}
+
+.subscribe p {
+  margin-top: -5px;
+  margin-bottom: 34px;
+}
+
+.subscribe-form {
+  display: flex;
+  outline: 1px dashed red;
+}
+
+.subscribe-form input {
+  flex-grow: 1;
+/*  align-self: center;
+  height: 44px; "А теперь вот эту ножку подпилю еще немножко" (с)*/
+  margin-right: 11px;
+  padding-left: 14px;
+}
+
+.subscribe-form label {
+  display: none;
+}
+
+.subscribe-form button {
+  display: inline-block;
+  flex-shrink: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 8px;
+  padding-bottom: 11px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
 .map {
