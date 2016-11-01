@@ -55,6 +55,10 @@ h3 {
   font-family: "Roboto", "Arial", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 div,
 section,
 ul {
@@ -199,7 +203,6 @@ header {
   font-size: 22px;
   line-height: 24px;
   font-weight: bold;
-  font-family: "Roboto", "Arial", sans-serif;
   color: #ffffff;
 }
 
@@ -224,31 +227,53 @@ main {
   flex-direction: column;
   flex-basis: 560px;
   flex-shrink: 1;
-  padding-top: 5px;
+  padding-top: 16px;
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   padding-right: 20px;
+  background-color: #f7bdc1; /*для построения сетки*/
+  color: #ffffff;
 }
 
 .bonus-item-left {
   margin-right: 27px;
 }
 
+.bonus-title {
+  margin-top: 0;
+  margin-bottom: -3px;
+  margin-left: -1px;
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold;
+}
+
 .bonus-item p {
   margin-bottom: 45px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
 }
 
 .bonus-item a {
-  display: block;
-  width: 166px;
-  height: 50px;
   align-self: flex-end;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #ffffff;
+
 }
 
 .hit {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  background-color: #DEA5A4; /*для создания сетки*/
 }
 
 .gallery-item {
@@ -257,14 +282,52 @@ main {
   flex-shrink: 1;
 }
 
-.gallery-item p {
+.gallery-item::before {
+  position: absolute;;
+  display: block;
+  content: "";
+  width: 60px;
+  height: 60px;
+  outline: 1px dotted #333333;
+}
+
+.item-price {
   position: absolute;
-  top: 220px;
+  top: 192px;
   z-index: 1;
+  font-weight: bold;
+  color: #000000;
+}
+
+.item-price-value {
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.item-price-currency {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.item-price::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 7px;
+  left: 81px;
+  z-index: 2;
+  width: 29px;
+  height: 34px;
+  outline: 1px dotted #333333;
 }
 
 .gallery-item .item-name {
+  margin-top: 6px;
+  margin-bottom: -2px;
   text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
 }
 
 .gallery-item button {
@@ -291,13 +354,15 @@ main {
 
 .feature-item {
   position: relative;
-  margin-left: 60px;
+  margin-top: 0;
+  margin-left: 57px;
+  margin-bottom: 22px;
 }
 
 .feature-item::before {
   position: absolute;
-  top: -17px;
-  left: -60px;
+  top: -15px;
+  left: -57px;
   display: block;
   content: "";
   width: 50px;
