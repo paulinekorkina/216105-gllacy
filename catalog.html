@@ -79,11 +79,13 @@
             </div>
           </div>
         </div>
-        </div>
-        <div class="contacts">
+      </div>
+      <div class="contacts">
+        <div class="contacts-absolute">
           <p class="contacts-schedule">С 10 до 20, ежедневно</p>
           <p class="contacts-phone">8 812 450-25-25</p>
         </div>
+      </div>
     </header>
     <main class="container">
       <div class="breadcrumbs">
@@ -94,86 +96,104 @@
       <h1>Сливочное мороженое</h1>
       <section class="filter">
         <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
-          <div class="sorting">
-            <label for="sorting-id">Сортировка:</label>
-            <select id="sorting-id" name="sorting">
-              <option value="best-selling">по популярности</option>
-              <option value="low-price">сначала недорогие</option>
-              <option value="high-price">сначала дорогие</option>
-              <option value="fatness">по жирности</option>
-            </select>
+          <div class="filter-top">
+            <div class="sorting">
+              <label for="sorting-id">Сортировка:</label>
+              <select id="sorting-id" name="sorting">
+                <option value="best-selling">по популярности</option>
+                <option value="low-price">сначала недорогие</option>
+                <option value="high-price">сначала дорогие</option>
+                <option value="fatness">по жирности</option>
+              </select>
+            </div>
+            <div class="range">
+              <p>Цена: 100 руб. - 500 руб.</p>
+              <div class="range-bar"></div>
+            </div>
+            <div class="fatness">
+              <p>Жирность:</p>
+              <div class="fatness-value">
+                <label>
+                  <input type="radio" name="fatness" value="0">
+                  0%
+                </label>
+                <label>
+                  <input type="radio" name="fatness" value="below-10" checked>
+                  до 10%
+                </label>
+                <label>
+                  <input type="radio" name="fatness" value="below-30">
+                  до 30%
+                </label>
+                <label>
+                  <input type="radio" name="fatness" value="above-30">
+                  выше 30%
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="range">
-            <p>Цена: 100 руб. - 500 руб.</p>
-            <div class="range-bar"></div>
+          <div class="filter-bottom">
+            <div class="topping">
+              <p>Наполнители:</p>
+              <label>
+                <input type="checkbox" name="chocolate" checked>
+                шоколадные
+              </label>
+              <label>
+                <input type="checkbox" name="sugar" checked>
+                сахарные присыпки
+              </label>
+              <label>
+                <input type="checkbox" name="fruits">
+                фрукты
+              </label>
+              <label>
+                <input type="checkbox" name="syrup">
+                сиропы
+              </label>
+              <label>
+                <input type="checkbox" name="jam">
+                джемы
+              </label>
+            </div>
+            <a class="btn" href="#">Применить</a>
           </div>
-          <div class="fatness">
-            <p>Жирность:</p>
-            <label>
-              <input type="radio" name="fatness" value="0">
-              0%
-            </label>
-            <label>
-              <input type="radio" name="fatness" value="below-10" checked>
-              до 10%
-            </label>
-            <label>
-              <input type="radio" name="fatness" value="below-30">
-              до 30%
-            </label>
-            <label>
-              <input type="radio" name="fatness" value="above-30">
-              выше 30%
-            </label>
-          </div>
-          <div class="topping">
-            <p>Наполнители:</p>
-            <label>
-              <input type="checkbox" name="chocolate" checked>
-              шоколадные
-            </label>
-            <label>
-              <input type="checkbox" name="sugar" checked>
-              сахарные присыпки
-            </label>
-            <label>
-              <input type="checkbox" name="fruits">
-              фрукты
-            </label>
-            <label>
-              <input type="checkbox" name="syrup">
-              сиропы
-            </label>
-            <label>
-              <input type="checkbox" name="jam">
-              джемы
-            </label>
-          </div>
-          <a class="btn" href="#">Применить</a>
         </form>
       </section>
       <section class="gallery">
         <article class="gallery-item">
           <img src="img/gallery-item-1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-          <p class="item-price">310 /кг</p>
+          <p class="item-price">
+            <span class="item-price-value">310&nbsp;&nbsp;&nbsp;</span>
+            <span class="item-price-currency">/кг</span>
+          </p>
           <h2 class="item-name">Сливочное с апельсиновым джемом и цитрусовой стружкой</h2>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item">
           <img src="img/gallery-item-2.jpg" alt="Сливочно-кофейное с кусочками шоколада">
-          <p class="item-price">380 /кг</p>
+          <p class="item-price">
+            <span class="item-price-value">380&nbsp;&nbsp;&nbsp;</span>
+            <span class="item-price-currency">/кг</span>
+          </p>
           <h2 class="item-name">Сливочно-кофейное с кусочками шоколада</h2>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item">
           <img src="img/gallery-item-3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-          <p class="item-price">355 /кг</p>
+          <p class="item-price">
+            <span class="item-price-value">355&nbsp;&nbsp;&nbsp;</span>
+            <span class="item-price-currency">/кг</span>
+          </p>
           <h2 class="item-name">Сливочно-клубничное с присыпкой из белого шоколада</h2>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item">
           <img src="img/gallery-item-4.jpg" alt="Сливочное крем-брюле с карамельной подливкой">
-          <p class="item-price">415 /кг</p>
+          <p class="item-price">
+            <span class="item-price-value">415&nbsp;&nbsp;&nbsp;</span>
+            <span class="item-price-currency">/кг</span>
+          </p>
           <h2 class="item-name">Сливочное крем-брюле с карамельной подливкой</h2>
           <button class="btn">Быстрый просмотр</button>
         </article>
