@@ -33,6 +33,7 @@ body {
 
 h1 {
   margin-top: 0;
+  margin-bottom: 25px;
   font-size: 35px;
   line-height: 41px;
   color: #ffffff;
@@ -135,6 +136,10 @@ header {
 
 .main-menu .sub-menu {
   display: none;
+  padding-top: 5px;
+}
+
+.main-menu .sub-menu ul {
   padding-top: 6px;
   padding-left: 0;
   list-style: none;
@@ -162,7 +167,7 @@ header {
 
 .main-menu > li:hover .sub-menu { /*как лучше сделать прозрачную область сверху? от оберток верстка едет*/
   position: absolute;
-  top: 37px;
+  top: 22px;
   left: -6px;
   display: block;
 }
@@ -304,7 +309,6 @@ header {
 .cart {
   display: inline-block;
   width: 107px;
-  height: 25px;
   padding-top: 7px;
   padding-left: 10px;
   text-align: center;
@@ -420,9 +424,10 @@ main {
   position: relative;
   flex-basis: 267px;
   flex-shrink: 1;
+  margin-bottom: 42px;
 }
 
-.gallery-item::before {
+.hit .gallery-item::before {
   position: absolute;;
   display: block;
   content: "";
@@ -464,14 +469,38 @@ main {
 .gallery-item .item-name {
   margin-top: 6px;
   margin-bottom: -2px;
+  padding-left: 6px; /*исправляет перенос слов из-за небольшой разницы в шрифте*/
+  padding-right: 6px;
   text-align: center;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
 }
 
+.item-name::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 95%;
+  height: 40px;
+}
+
 .gallery-item button {
   display: none;
+}
+
+.gallery-item:hover button {
+  position: absolute;
+  left: 33px;
+  bottom: -57px;
+  z-index: 1;
+  display: block;
+  width: 200px;
+  height: 45px;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: bold;
 }
 
 .features {
@@ -655,7 +684,7 @@ main {
   display: block;
   width: 6px;
   height: 6px;
-  outline: 1px dotted blue;
+  outline: 1px dotted blue; /*для построения сетки*/
 }
 
 .filter {
@@ -664,15 +693,17 @@ main {
 }
 
 .filter-top {
-  display: flex; /*Почему-то если не задать раскладку флексбокса,
-  блоки странно выравниваются по высоте. Я их сделала инлайн-блоками,
-  и range упорно лезет вниз, хотя тут по идее можно и без флекса.
-  Что делать? Оставить флекс? Бороться с range? */
+  display: flex;
+  margin-bottom: 17px;
 }
 
 /*.filter .sorting {
   display: inline-block;
 } - убираю отображение инлайн-блок, т.к. сделала родитель флекс-контейнером*/
+
+.filter-top > div {
+  margin-right: 15px;
+}
 
 .sorting label,
 .range p,
@@ -684,12 +715,29 @@ main {
   color: #ffffff;
 }
 
+.sorting select,
+.fatness label,
+.topping-checkbox label
+.filter .btn {
+  font-size: 16px;
+  line-height: 18px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+/*  color: #ffffff;*/
+}
+
 .sorting label {
   display: block;
+  padding-left: 16px;
+  margin-bottom: 5px;
 }
 
 .sorting select {
   display: block;
+  width: 193px;
+  height: 36px;
+  padding-left: 12px;
+  border: none;
+  vertical-align: middle;
 }
 
 /*.filter .range {
@@ -698,7 +746,8 @@ main {
 
 .range p {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  padding-left: 15px;
 }
 
 .range .range-bar {
@@ -712,21 +761,46 @@ main {
 
 .fatness p {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+
+.fatness-value {
+  width: 385px; /*убрать после добавления стилей переключателей*/
+  height: 36px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .filter .topping {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .topping p {
   margin-top: 0;
-  margin-bottom: 0;
-  line-height: auto;
+  margin-bottom: 5px;
+  padding-left: 15px;
 }
 
-.filter a {
+.topping-checkbox {
+  width: 673px; /*убрать после добавления стилей переключателей*/
+  height: 36px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.filter .btn {
   display: inline-block;
+  width: 144px;
+  height: 36px;
+  text-align: center;
+}
+
+.pagination {
+  height: 26px;
+  margin-bottom: 30px;
+  text-align: right;
 }
 
 .main-footer {
