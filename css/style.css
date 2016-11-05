@@ -144,6 +144,7 @@ header {
   padding-left: 0;
   list-style: none;
   white-space: nowrap;
+  background-color: #f8f7f4;
 }
 
 .sub-menu a {
@@ -296,7 +297,7 @@ header {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-  font-family: "Roboto", "Arial", sans-serif; /*Почему не наследуется от body?*/
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
 .login-form a {
@@ -304,6 +305,10 @@ header {
   font-size: 13px;
   line-height: 13px;
   color: #323232;
+}
+
+.cart-full {
+  position: relative;
 }
 
 .cart {
@@ -315,8 +320,78 @@ header {
   vertical-align: middle;
 }
 
+.cart {
+  width: 92px;
+  text-align: right;
+  padding-right: 17px;
+}
+
 .cart-preview {
   display: none;
+}
+
+.cart-full:hover .cart-preview {
+  position: absolute;
+  top: 31px;
+  right: 0;
+  z-index: 2;
+  display: block;
+  padding-top: 5px;
+}
+
+.cart-preview .cart-form {
+    background-color: #f8f7f4;
+    padding: 25px 14px 20px 17px;
+}
+
+.cart-preview table {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.cart-preview .cart-delete {
+  width: 24px;
+}
+
+.delete-icon {
+  width: 10px;
+  height: 10px;
+  outline: 1px dotted blue; /*для построения сетки*/
+}
+
+.cart-img {
+  width: 47px;
+}
+
+.cart-name {
+  width: 247px;
+}
+
+.cart-quantity {
+  width: 122px;
+}
+
+.cart-item-total {
+  width: 66px;
+}
+
+.cart-order-total {
+  padding: 0;
+  text-align: right;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.cart-preview button {
+  display: inline-block;
+  padding: 12px 15px;
+  text-align: right;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
 .contacts {
@@ -740,6 +815,15 @@ main {
   vertical-align: middle;
 }
 
+.sorting option {
+  display: block;
+  padding-top: 25px;
+  padding-left: 25px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
 /*.filter .range {
   display: inline-block;
 } - убираю отображение инлайн-блок, т.к. сделала родитель флекс-контейнером*/
@@ -885,21 +969,27 @@ main {
   line-height: 18px;
 }
 
-.feedback {
+.feedback-wrap {
   display: none;
 }
 
-.feedback {
-  position: absolute;
-  top: 338px;
+.feedback-wrap {
+  position: fixed;
+  z-index: 99;
   display: block;
+  padding-top: 338px;
+}
+
+.feedback {
   width: 429px;
   height: 400px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 16px;
   padding-right: 24px;
   padding-bottom: 26px;
   padding-left: 24px;
-  background-color: #f8f7f7;
+  background-color: #f8f7f4;
 }
 
 .feedback b {
@@ -949,7 +1039,7 @@ main {
 
 .feedback::after {
   position: absolute;
-  top: 15px;
+  top: 353px;
   right: 15px;
   content: "";
   display: block;
