@@ -12,13 +12,6 @@ body {
         url("../fonts/roboto.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Roboto-Medium";
-    src:
-        local("Roboto Medium"),
-        url("../fonts/robotomedium.woff") format("woff");
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -168,7 +161,7 @@ header {
 
 .main-menu > li:hover .sub-menu { /*как лучше сделать прозрачную область сверху? от оберток верстка едет*/
   position: absolute;
-  top: 22px;
+  top: 32px;
   left: -6px;
   display: block;
 }
@@ -181,7 +174,7 @@ header {
 .user-block a {
   font-size: 14px;
   line-height: 16px;
-  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -242,7 +235,7 @@ header {
   display: inline-block;
   width: 60px;
   height: 25px;
-  margin-right: 10px;
+  margin-right: 8px;
   padding-top: 7px;
   padding-right: 16px;
   padding-left: 16px;
@@ -258,6 +251,7 @@ header {
   position: absolute;
   top: 25px;
   right: 8px;
+  z-index: 2;
   display: block;
 }
 
@@ -313,17 +307,17 @@ header {
 
 .cart {
   display: inline-block;
-  width: 107px;
+  width: 90px;
   padding-top: 7px;
   padding-left: 10px;
-  text-align: center;
+  padding-right: 17px;
+  text-align: right;
   vertical-align: middle;
 }
 
-.cart {
-  width: 92px;
-  text-align: right;
-  padding-right: 17px;
+.cart-empty {
+  width: 74px;
+  padding-right: 35px;
 }
 
 .cart-preview {
@@ -332,16 +326,18 @@ header {
 
 .cart-full:hover .cart-preview {
   position: absolute;
-  top: 31px;
+  top: 30px;
   right: 0;
   z-index: 2;
   display: block;
+  width: 540px;
   padding-top: 5px;
+  text-align: right;
 }
 
 .cart-preview .cart-form {
     background-color: #f8f7f4;
-    padding: 25px 14px 20px 17px;
+    padding: 16px 14px 20px 15px;
 }
 
 .cart-preview table {
@@ -349,35 +345,52 @@ header {
   line-height: 16px;
 }
 
+.cart-preview td {
+  padding: 0;
+  padding-bottom: 15px;
+  text-align: left;
+/*  vertical-align: middle;*/
+}
+
 .cart-preview .cart-delete {
   width: 24px;
 }
 
-.delete-icon {
+.cart-preview .delete-icon {
   width: 10px;
   height: 10px;
   outline: 1px dotted blue; /*для построения сетки*/
 }
 
-.cart-img {
-  width: 47px;
+.cart-preview .cart-img {
+  width: 44px;
 }
 
-.cart-name {
+.cart-preview .cart-name {
   width: 247px;
 }
 
-.cart-quantity {
+.cart-preview .cart-quantity-price {
   width: 122px;
 }
 
-.cart-item-total {
+.cart-quantity-price .cart-quantity {
+  color: #333333;
+}
+
+.cart-quantity-price .cart-price {
+  color: #999999;
+}
+
+.cart-preview .cart-item-total {
   width: 66px;
 }
 
-.cart-order-total {
-  padding: 0;
+.cart-preview .cart-order-total {
+  padding-top: 18px;
+  padding-bottom: 13px;
   text-align: right;
+  vertical-align: bottom;
   font-size: 15px;
   line-height: 18px;
   font-weight: bold;
@@ -386,7 +399,7 @@ header {
 
 .cart-preview button {
   display: inline-block;
-  padding: 12px 15px;
+  padding: 7px 14px 9px 14px;
   text-align: right;
   font-size: 18px;
   line-height: 24px;
@@ -491,7 +504,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: -2px;
   background-color: #dea5a4; /*для построения сетки*/
 }
 
@@ -502,13 +515,17 @@ main {
   margin-bottom: 42px;
 }
 
-.hit .gallery-item::before {
+.gallery-hit::before {
   position: absolute;;
   display: block;
   content: "";
   width: 60px;
   height: 60px;
   outline: 1px dotted #333333;
+}
+
+.gallery-item img {
+  border-radius: 50%;
 }
 
 .item-price {
@@ -636,7 +653,7 @@ main {
 .news-title {
   font-size: 16px;
   line-height: 22px;
-  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-weight: 400;
 }
 
 .news-preview {
@@ -730,9 +747,9 @@ main {
 .map-contacts a {
   display: block;
   margin-top: 24px;
-  padding-top: 10px;
+  padding-top: 9px;
   padding-right: 28px;
-  padding-bottom: 10px;
+  padding-bottom: 11px;
   padding-left: 28px;
   font-size: 18px;
   line-height: 24px;
@@ -786,7 +803,7 @@ main {
 .topping p {
   font-size: 14px;
   line-height: 16px;
-  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -796,7 +813,7 @@ main {
 .filter .btn {
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-weight: 400;
 /*  color: #ffffff;*/
 }
 
@@ -969,26 +986,20 @@ main {
   line-height: 18px;
 }
 
-.feedback-wrap {
+.feedback {
   display: none;
 }
 
-.feedback-wrap {
+.feedback {
   position: fixed;
+  top: 30%;
+  left: 50%;
   z-index: 99;
   display: block;
-  padding-top: 338px;
-}
-
-.feedback {
   width: 429px;
   height: 400px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 16px;
-  padding-right: 24px;
-  padding-bottom: 26px;
-  padding-left: 24px;
+  margin-left: -237px;
+  padding: 16px 24px 26px 24px;
   background-color: #f8f7f4;
 }
 
@@ -997,9 +1008,7 @@ main {
   margin-bottom: 20px;
   font-size: 24px;
   line-height: 28px;
-  font-family: "Roboto-Medium", "Arial", sans-serif;
-  font-weight: normal;
-
+  font-weight: 400;
 }
 
 .feedback label {
@@ -1037,11 +1046,10 @@ main {
   font-weight: bold;
 }
 
-.feedback::after {
+.feedback-close {
   position: absolute;
-  top: 353px;
-  right: 15px;
-  content: "";
+  top: 15px;
+  right: 16px;
   display: block;
   width: 16px;
   height: 16px;
