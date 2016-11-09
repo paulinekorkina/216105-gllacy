@@ -21,7 +21,7 @@ body {
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
-/*  background-color: #849d8f;*/
+  background-color: #849d8f;
 }
 
 h1 {
@@ -54,7 +54,20 @@ a {
   text-decoration: none;
 }
 
-div,
+.btn {
+  border: none;
+  border-radius: 15px;
+  background-image: linear-gradient(#f26843, #e74b36);
+  box-shadow: 0 1px 0 0 #ac1000;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/*div,
 section,
 ul {
   outline: 1px dashed orangered;
@@ -67,7 +80,7 @@ p,
 a,
 li {
   outline: 1px dashed #555555;
-}
+}*/
 
 .container {
   display: flex;
@@ -81,7 +94,6 @@ li {
 
 header {
   margin-bottom: 10px;
-  background-color: #ffd9a0; /*для построения сетки*/
 }
 
 .header-top {
@@ -117,6 +129,20 @@ header {
   padding-right: 14px;
   padding-bottom: 5px;
   padding-left: 14px;
+  border-radius: 18px;
+}
+
+.main-menu .menu-active {
+  background-color: #d07058;
+}
+
+.main-menu > li:hover {
+  background-color: #f8f7f4;
+}
+
+.main-menu > li:active {
+  background-color: #f8f7f4;
+  box-shadow: inset 0 1px 1px #696969;
 }
 
 .main-menu > li:hover a {
@@ -135,17 +161,20 @@ header {
 .main-menu .sub-menu ul {
   padding-top: 6px;
   padding-left: 0;
+  padding-bottom: 3px;
   list-style: none;
   white-space: nowrap;
   background-color: #f8f7f4;
+  border-radius: 5px;
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
 }
 
-.sub-menu a {
+.main-menu .sub-menu a {
   display: block;
   margin-bottom: 4px;
-  padding-top: 5px;
+  padding-top: 6px;
   padding-right: 20px;
-  padding-bottom: 7px;
+  padding-bottom: 6px;
   padding-left: 20px;
   font-size: 14px;
   line-height: 16px;
@@ -153,13 +182,38 @@ header {
   color: #323232;
 }
 
-.sub-menu .menu-latest {
+.main-menu .sub-menu a:hover {
+  background-color: #fbded7;
+  color: #323232;
+}
+
+.main-menu .sub-menu a:active {
+  background-color: #f6b5a5;
+}
+
+.main-menu .sub-menu .submenu-active {
+  background-color: #d07058;
+  color: #ffffff;
+}
+
+.main-menu .sub-menu .menu-latest {
+  position: relative;
   padding-top: 5px;
   padding-bottom: 11px;
   font-weight: bold;
 }
 
-.main-menu > li:hover .sub-menu { /*как лучше сделать прозрачную область сверху? от оберток верстка едет*/
+.main-menu .sub-menu .menu-latest::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  left: 6px;
+  bottom: 0px;
+  height: 1px;
+  background-color: #d1d0ce;
+}
+
+.main-menu > li:hover .sub-menu {
   position: absolute;
   top: 32px;
   left: -6px;
@@ -178,153 +232,221 @@ header {
   color: #ffffff;
 }
 
-.search-wrap {
+.user-block .search-wrap {
   position: relative;
   width: 32px;
   height: 32px;
   margin-right: 10px;
 }
 
-.search-field {
+.user-block .search-field {
   display: none;
 }
 
-.search-btn {
+.user-block .search-btn {
   display: inline-block;
   width: 32px;
   height: 32px;
-  align-self: center;
-  outline: 1px dotted #333333; /*для построения сетки*/
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background-image: url("../img/sprite.png");
+  background-position: 2px 2px;
+  vertical-align: top;
+  /*outline: 1px dotted #333333; для построения сетки*/
 }
 
-.search-wrap:hover .search-field {
+.user-block .search-btn:hover {
+  background-color: #ffffff;
+  background-position: 2px -25px;
+}
+
+.user-block .search-wrap:hover .search-field {
   position: absolute;
   right: 1px;
-  top: 6px;
+  top: 32px;
   z-index: 1;
   display: block;
-  padding-top: 30px;
+  padding-top: 4px;
 }
 
-.search-form {
+.user-block .search-form {
   padding: 19px 15px;
   background-color: #f8f7f4;
-  outline: 1px dashed orangered; /*для построения сетки*/
+  border-radius: 5px;
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
+  /*outline: 1px dashed orangered; для построения сетки*/
 }
 
-.search-form label {
+.user-block .search-form label {
   display: none;
 }
 
-.search-form input {
+.user-block .search-form input {
   display: block;
   width: 311px;
   height: 44px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-left: 12px;
+  border: 1px solid #d3d3d2;
+  border-radius: 5px;
   font-size: 14px;
   line-height: 24px;
 }
 
-.login-wrap {
+.user-block .login-wrap {
   position: relative;
 }
 
-.login {
+.user-block .login {
+  position: relative;
   display: inline-block;
   width: 60px;
-  height: 25px;
-  margin-right: 8px;
-  padding-top: 7px;
+  margin-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-right: 16px;
   padding-left: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
   text-align: right;
+  vertical-align: top;
 }
 
-.login-window {
-  display: none;
-  padding-top: 10px;
+.user-block .login:hover {
+  background-color: #ffffff;
+  color: #323232;
 }
 
-.login-wrap:hover .login-window {
+.user-block .login::before {
+  content: "";
   position: absolute;
-  top: 25px;
-  right: 8px;
+  top: 5px;
+  left: 16px;
+  width: 21px;
+  height: 19px;
+  background-image: url("../img/sprite.png");
+  background-position: -5px -59px;
+}
+
+.user-block .login:hover::before {
+  background-position: -5px -88px;
+}
+
+.user-block .login-window {
+  display: none;
+  padding-top: 3px;
+}
+
+.user-block .login-wrap:hover .login-window {
+  position: absolute;
+  top: 32px;
+  right: 7px;
   z-index: 2;
   display: block;
 }
 
-.login-form {
+.user-block .login-form {
   width: 241px;
   height: 175px;
   padding-top: 20px;
   padding-right: 17px;
   padding-bottom: 20px;
   padding-left: 19px;
-  outline: 1px dashed blue; /*для построения сетки*/
+  border-radius: 5px;
+  background-color: #f8f7f4;
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
+  /*outline: 1px dashed blue; для построения сетки*/
 }
 
-.login-form label {
+.user-block .login-form label {
   display: none;
 }
 
-.login-form input {
+.user-block .login-form input {
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
-  padding-top: 6px;
+  padding-top: 8px;
   padding-bottom: 10px;
   padding-left: 13px;
+  border: 1px solid #d3d3d2;
+  border-radius: inherit;
   font-size: 14px;
   line-height: 24px;
 }
 
-.login-form .btn {
+.user-block .login-form .btn {
   float: left;
-  margin-right: 18px;
-  padding-top: 9px;
+  margin-right: 20px;
+  padding-top: 10px;
   padding-right: 25px;
-  padding-bottom: 9px;
-  padding-left: 23px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  font-family: "Roboto", "Arial", sans-serif;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  border-radius: 19px / 26px;
 }
 
-.login-form a {
+.user-block .login-form a {
   display: inline-block;
   font-size: 13px;
   line-height: 13px;
   color: #323232;
 }
 
-.cart-full {
+.user-block .cart-wrap {
   position: relative;
 }
 
-.cart {
+.user-block .cart {
+  position: relative;
   display: inline-block;
-  width: 90px;
-  padding-top: 7px;
-  padding-left: 10px;
-  padding-right: 17px;
-  text-align: right;
-  vertical-align: middle;
-}
-
-.cart-empty {
   width: 74px;
+  padding-top: 8px;
+  padding-left: 8px;
   padding-right: 35px;
+  padding-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  text-align: right;
+  vertical-align: top;
 }
 
-.cart-preview {
+.user-block .cart-full {
+  width: 90px;
+  padding-left: 12px;
+  padding-right: 17px;
+  background-color: #ffffff;
+  color: #323232;
+}
+
+.user-block .cart-empty::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 16px;
+  width: 21px;
+  height: 20px;
+  background-image: url("../img/sprite.png");
+  background-position: -5px -117px;
+}
+
+.user-block .cart-full::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 17px;
+  width: 21px;
+  height: 20px;
+  background-image: url("../img/sprite.png");
+  background-position: -5px -147px;
+}
+
+.user-block .cart-preview {
   display: none;
 }
 
-.cart-full:hover .cart-preview {
+.user-block .cart-wrap:hover .cart-preview {
   position: absolute;
   top: 30px;
   right: 0;
@@ -335,58 +457,89 @@ header {
   text-align: right;
 }
 
-.cart-preview .cart-form {
-    background-color: #f8f7f4;
-    padding: 16px 14px 20px 15px;
+.user-block .cart-preview .cart-form {
+  background-color: #f8f7f4;
+  padding: 16px 14px 20px 15px;
+  border-radius: 5px;
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
 }
 
-.cart-preview table {
+.user-block .cart-preview table {
   font-size: 13px;
   line-height: 16px;
 }
 
-.cart-preview td {
+.user-block .cart-preview td {
   padding: 0;
   padding-bottom: 15px;
   text-align: left;
-/*  vertical-align: middle;*/
 }
 
-.cart-preview .cart-delete {
+.user-block .cart-preview .cart-delete {
+  position: relative;
   width: 24px;
 }
 
-.cart-preview .delete-icon {
+.user-block .cart-preview .delete-icon {
   width: 10px;
   height: 10px;
-  outline: 1px dotted blue; /*для построения сетки*/
+  cursor: pointer;
 }
 
-.cart-preview .cart-img {
+.user-block .cart-preview .delete-icon::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -2px;
+  height: 1px;
+  width: 14px;
+  background-color: #323232;
+  transform: rotate(45deg);
+}
+
+.user-block .cart-preview .delete-icon::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -2px;
+  height: 1px;
+  width: 14px;
+  background-color: #323232;
+  transform: rotate(-45deg);
+}
+
+.user-block .cart-preview .cart-img {
   width: 44px;
 }
 
-.cart-preview .cart-name {
-  width: 247px;
+.user-block .cart-preview .cart-name {
+  width: 227px;
+  padding-right: 20px;
 }
 
-.cart-preview .cart-quantity-price {
+.user-block .cart-preview .cart-name-long { /*опустить на 8 пикс. - следование макету*/
+  padding-top: 8px;
+  padding-bottom: 7px;
+}
+
+.user-block .cart-preview .cart-quantity-price {
   width: 122px;
 }
 
-.cart-quantity-price .cart-quantity {
+.user-block .cart-quantity-price .cart-quantity {
   color: #333333;
 }
 
-.cart-quantity-price .cart-price {
+.user-block .cart-quantity-price .cart-price {
   color: #999999;
 }
 
-.cart-preview .cart-item-total {
+.user-block .cart-preview .cart-item-total {
   width: 66px;
 }
 
-.cart-preview .cart-order-total {
+.user-block .cart-preview .cart-order-total {
+  position: relative;
   padding-top: 18px;
   padding-bottom: 13px;
   text-align: right;
@@ -397,14 +550,22 @@ header {
   color: #333333;
 }
 
-.cart-preview button {
+.user-block .cart-preview .cart-order-total::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #cacac7;
+}
+
+.user-block .cart-preview button {
   display: inline-block;
-  padding: 7px 14px 9px 14px;
+  vertical-align: top;
+  padding: 10px 15px 10px 15px;
+  border-radius: 20px / 25px;
   text-align: right;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  font-family: "Roboto", "Arial", sans-serif;
 }
 
 .contacts {
@@ -416,7 +577,7 @@ header {
 .contacts-absolute {
   position: absolute;
   top: -20px;
-  left: -165px;
+  left: -160px;
 }
 
 .contacts-schedule {
@@ -437,7 +598,6 @@ header {
 
 main {
   flex-grow: 1;
-  background-color: #feecd4; /*для построения сетки*/
 }
 
 .slider {
@@ -461,7 +621,6 @@ main {
   padding-right: 20px;
   padding-bottom: 25px;
   padding-left: 20px;
-  background-color: #f7bdc1; /*для построения сетки*/
   color: #ffffff;
 }
 
@@ -505,7 +664,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: -2px;
-  background-color: #dea5a4; /*для построения сетки*/
 }
 
 .gallery-item {
@@ -781,7 +939,6 @@ main {
 
 .filter {
   margin-bottom: 40px;
-  background-color: #f7bdc1; /*для построения сетки*/
 }
 
 .filter-top {
@@ -910,8 +1067,6 @@ main {
   justify-content: space-between;
   padding-top: 19px;
   padding-bottom: 23px;
-  background-color: #ecc7b4; /*для построения сетки*/
-
 }
 
 .main-footer,
@@ -990,7 +1145,7 @@ main {
   display: none;
 }
 
-.feedback {
+/*.feedback {
   position: fixed;
   top: 30%;
   left: 50%;
@@ -1055,3 +1210,4 @@ main {
   height: 16px;
   outline: 1px dotted blue;
 }
+*/
