@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -85,7 +86,7 @@
             <span class="item-price-value">310&nbsp;&nbsp;&nbsp;</span>
             <span class="item-price-currency">/кг</span>
           </p>
-          <h2 class="item-name">Сливочное с апельсиновым джемом и цитрусовой стружкой</h2>
+          <a class="item-name">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item gallery-hit">
@@ -94,7 +95,7 @@
             <span class="item-price-value">380&nbsp;&nbsp;&nbsp;</span>
             <span class="item-price-currency">/кг</span>
           </p>
-          <h2 class="item-name">Сливочно-кофейное с кусочками шоколада</h2>
+          <a class="item-name">Сливочно-кофейное с кусочками шоколада</a>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item gallery-hit">
@@ -103,7 +104,7 @@
             <span class="item-price-value">355&nbsp;&nbsp;&nbsp;</span>
             <span class="item-price-currency">/кг</span>
           </p>
-          <h2 class="item-name">Сливочно-клубничное с присыпкой из белого шоколада</h2>
+          <a class="item-name">Сливочно-клубничное с присыпкой из белого шоколада</a>
           <button class="btn">Быстрый просмотр</button>
         </article>
         <article class="gallery-item gallery-hit">
@@ -112,20 +113,20 @@
             <span class="item-price-value">415&nbsp;&nbsp;&nbsp;</span>
             <span class="item-price-currency">/кг</span>
           </p>
-          <h2 class="item-name">Сливочное крем-брюле с карамельной подливкой</h2>
+          <a class="item-name">Сливочное крем-брюле с карамельной подливкой</a>
           <button class="btn">Быстрый просмотр</button>
         </article>
       </section>
       <section class="features">
-        <h3>Магазин Глейси — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h3>
+        <h3>Магазин Глейси&nbsp;&nbsp;— это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h3>
         <div class="feature-wrap">
           <div class="feature-wrap-column">
-            <p class="feature-item">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
-            <p class="feature-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
+            <p class="feature-item feature-item-1">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
+            <p class="feature-item feature-item-2">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
           </div>
           <div class="feature-wrap-column">
-            <p class="feature-item">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
-            <p class="feature-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+            <p class="feature-item feature-item-3">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
+            <p class="feature-item feature-item-4">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
           </div>
         </div>
       </section>
@@ -135,12 +136,14 @@
           <a class="news-preview" href="#">10 способов сервировки фруктовых щербетов к столу</a>
         </div>
         <div class="subscribe">
-          <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="subscribe-wrap">
+            <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+            <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="post">
             <label for="subscribe-email-id">Электронная почта</label>
             <input id="subscribe-email-id" type="text" name="subscribe-email" value="" placeholder="Электронная почта">
             <button class="btn" type="submit">Отправить</button>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
       <section class="map">

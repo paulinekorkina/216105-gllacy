@@ -5,12 +5,12 @@ body {
   padding: 0;
 }
 
-@font-face {
+/*@font-face {
     font-family: "Roboto";
     src:
         local("Roboto Regular"),
         url("../fonts/roboto.woff") format("woff");
-}
+}*/
 
 body {
   display: flex;
@@ -46,7 +46,7 @@ h3 {
   font-size: 24px;
   line-height: 30px;
   color: #323232;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Roboto", "Arial", sans-serif;
 }
 
@@ -58,7 +58,7 @@ a {
   border: none;
   border-radius: 15px;
   background-image: linear-gradient(#f26843, #e74b36);
-  box-shadow: 0 1px 0 0 #ac1000;
+  box-shadow: 0 1px 0 0 rgba(172, 16, 0, 0.64);
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -130,6 +130,10 @@ header {
   padding-bottom: 5px;
   padding-left: 14px;
   border-radius: 18px;
+}
+
+.main-menu > li > a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .main-menu .menu-active {
@@ -577,7 +581,7 @@ header {
 .contacts-absolute {
   position: absolute;
   top: -20px;
-  left: -160px;
+  left: -167px;
 }
 
 .contacts-schedule {
@@ -619,13 +623,21 @@ main {
   flex-shrink: 1;
   padding-top: 16px;
   padding-right: 20px;
-  padding-bottom: 25px;
+  padding-bottom: 23px;
   padding-left: 20px;
+  border-radius: 15px;
   color: #ffffff;
 }
 
 .bonus-item-left {
   margin-right: 27px;
+  background-color: #9b0123;
+  background: url(../img/bonus-left.jpg);
+}
+
+.bonus-item-right {
+  background-color: #432416;
+  background: url(../img/bonus-right.jpg);
 }
 
 .bonus-title {
@@ -638,7 +650,7 @@ main {
 }
 
 .bonus-item p {
-  margin-bottom: 45px;
+  margin-bottom: 44px;
   font-size: 18px;
   line-height: 22px;
   font-weight: bold;
@@ -648,9 +660,10 @@ main {
   align-self: flex-end;
   display: inline-block;
   padding-top: 10px;
-  padding-right: 22px;
-  padding-bottom: 10px;
-  padding-left: 22px;
+  padding-right: 23px;
+  padding-bottom: 12px;
+  padding-left: 23px;
+  border-radius: 23px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -663,7 +676,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: -2px;
+  margin-bottom: -4px;
 }
 
 .gallery-item {
@@ -671,6 +684,10 @@ main {
   flex-basis: 267px;
   flex-shrink: 1;
   margin-bottom: 42px;
+/*  padding-top: 6px;
+  padding-right: 13px;
+  padding-left: 13px;*/
+  text-align: center;
 }
 
 .gallery-hit::before {
@@ -679,11 +696,13 @@ main {
   content: "";
   width: 60px;
   height: 60px;
-  outline: 1px dotted #333333;
+  border-radius: 50%;
+  background-image: url(../img/hit-icon.png);
 }
 
 .gallery-item img {
   border-radius: 50%;
+  margin-bottom: 7px;
 }
 
 .item-price {
@@ -691,7 +710,8 @@ main {
   top: 192px;
   z-index: 1;
   font-weight: bold;
-  color: #000000;
+  text-shadow: 1px 1px 0 rgba(49, 50, 53, 0.5);
+  color: #ffffff;
 }
 
 .item-price-value {
@@ -713,17 +733,17 @@ main {
   z-index: 2;
   width: 29px;
   height: 34px;
-  outline: 1px dotted #333333;
+  background-image: url(../img/ruble-icon.png);
 }
 
 .gallery-item .item-name {
+  position: relative;
   margin-top: 6px;
   margin-bottom: -2px;
-  padding-left: 6px; /*исправляет перенос слов из-за небольшой разницы в шрифте*/
-  padding-right: 6px;
-  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 16px;
   line-height: 22px;
+  font-weight: 400;
   color: #ffffff;
 }
 
@@ -739,24 +759,33 @@ main {
   display: none;
 }
 
+.gallery-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .gallery-item:hover button {
   position: absolute;
   left: 33px;
-  bottom: -57px;
+  top: 333px;
   z-index: 1;
   display: block;
   width: 200px;
-  height: 45px;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 18px / 23px;
 }
 
 .features {
   margin-bottom: 40px;
   padding-right: 20px;
   padding-left: 20px;
+  padding-bottom: 3px;
+  border-radius: 15px;
+  background-image: url(../img/features-background.jpg);
+}
+
+.features h3 {
+  margin-bottom: 21px;
 }
 
 .feature-wrap {
@@ -780,13 +809,29 @@ main {
 
 .feature-item::before {
   position: absolute;
-  top: -15px;
+  top: -12px;
   left: -57px;
   display: block;
   content: "";
   width: 50px;
   height: 50px;
-  outline: 1px dotted #555555;
+  background-repeat: no-repeat;
+}
+
+.feature-item-1::before {
+  background-image: url(../img/feature-icon-1.png);
+}
+
+.feature-item-2::before {
+  background-image: url(../img/feature-icon-2.png);
+}
+
+.feature-item-3::before {
+  background-image: url(../img/feature-icon-3.png);
+}
+
+.feature-item-4::before {
+  background-image: url(../img/feature-icon-4.png);
 }
 
 .news-subscribe {
@@ -799,13 +844,16 @@ main {
   flex-basis: 420px;
   flex-shrink: 1;
   flex-grow: 1;
-  padding-right: 20px;
-  padding-left: 20px;
+/*  padding-right: 20px;
+  padding-left: 20px;*/
+  border-radius: 15px;
 }
 
 .news {
   margin-right: 27px;
   padding-top: 7px;
+  padding-left: 20px;
+  background: url(../img/news-background.jpg) no-repeat;
 }
 
 .news-title {
@@ -826,26 +874,41 @@ main {
 }
 
 .subscribe {
-  flex-basis: 408px;
+  flex-basis: 428px;
+  padding: 6px;
+  background-image: url(../img/subscribe-background.jpg);
+}
+
+.subscribe-wrap {
+  background-color: #f8f7f4;
   padding-top: 33px;
   padding-bottom: 33px;
-  border: 6px solid #92cdff;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 15px;
 }
 
 .subscribe p {
   margin-top: -5px;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
 
 .subscribe-form {
   display: flex;
-  outline: 1px dashed red;
 }
 
 .subscribe-form input {
   flex-grow: 1;
   margin-right: 11px;
   padding-left: 14px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d2;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #999999;
 }
 
 .subscribe-form label {
@@ -857,12 +920,9 @@ main {
   flex-shrink: 0;
   padding-top: 8px;
   padding-right: 18px;
-  padding-bottom: 11px;
+  padding-bottom: 10px;
   padding-left: 18px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  font-family: "Roboto", "Arial", sans-serif;
+  border-radius: 23px;
 }
 
 .map {
@@ -946,10 +1006,6 @@ main {
   margin-bottom: 17px;
 }
 
-/*.filter .sorting {
-  display: inline-block;
-} - убираю отображение инлайн-блок, т.к. сделала родитель флекс-контейнером*/
-
 .filter-top > div {
   margin-right: 15px;
 }
@@ -998,10 +1054,6 @@ main {
   font-family: "Roboto", "Arial", sans-serif;
 }
 
-/*.filter .range {
-  display: inline-block;
-} - убираю отображение инлайн-блок, т.к. сделала родитель флекс-контейнером*/
-
 .range p {
   margin-top: 0;
   margin-bottom: 5px;
@@ -1012,10 +1064,6 @@ main {
   width: 219px;
   height: 36px;
 }
-
-/*.filter .fatness {
-  display: inline-block;
-} - убираю отображение инлайн-блок, т.к. сделала родитель флекс-контейнером*/
 
 .fatness p {
   margin-top: 0;
