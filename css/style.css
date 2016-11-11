@@ -21,7 +21,7 @@ body {
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
-  background-color: #849d8f;
+  background-color: #849d8f; /*после добавления слайдера оставить фон у обертки*/
 }
 
 h1 {
@@ -90,6 +90,7 @@ li {
   max-width: 1146px;
   padding-right: 27px;
   padding-left: 27px;
+  background-color: #849d8f;
 }
 
 header {
@@ -841,7 +842,7 @@ main {
 
 .news,
 .subscribe {
-  flex-basis: 420px;
+  flex-basis: 400px;
   flex-shrink: 1;
   flex-grow: 1;
 /*  padding-right: 20px;
@@ -874,7 +875,7 @@ main {
 }
 
 .subscribe {
-  flex-basis: 428px;
+  flex-basis: 408px;
   padding: 6px;
   background-image: url(../img/subscribe-background.jpg);
 }
@@ -928,18 +929,24 @@ main {
 .map {
   position: relative;
   height: 429px;
+  background-image: url("../img/map.jpg");
+  background-repeat: no-repeat;
+  margin-right: -27px;
+  margin-left: -27px;
 }
 
 .map-contacts {
   position: absolute;
   top: 62px;
-  right: 0;
+  right: 27px;
   z-index: 1;
   width: 252px;
   padding-top: 30px;
   padding-right: 25px;
   padding-bottom: 30px;
   padding-left: 25px;
+  border-radius: 15px;
+  background-color: #fffffe;
 }
 
 .map-contacts p {
@@ -962,16 +969,14 @@ main {
   margin-bottom: 2px;
 }
 
-.map-contacts a {
+.map-contacts .btn {
   display: block;
   margin-top: 24px;
   padding-top: 9px;
-  padding-right: 28px;
+  padding-right: 27px;
   padding-bottom: 11px;
   padding-left: 28px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  border-radius: 23px;
 }
 
 .breadcrumbs {
@@ -1128,15 +1133,46 @@ main {
 
 .social-btn {
   display: inline-block;
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   font-size: 0;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.social-btn:hover {
+  opacity: 1;
+}
+
+.social-btn:active {
+  box-shadow: inset 0 2px 0 0 #888888;
 }
 
 .social-btn-twit,
 .social-btn-inst,
 .social-btn-fb {
   margin-right: 8px;
+}
+
+.social-btn-twit {
+  background-image: url("../img/sprite.png");
+  background-position: -5px -530px;
+}
+
+.social-btn-inst {
+  background-image: url("../img/sprite.png");
+  background-position: -5px -572px;
+}
+
+.social-btn-fb {
+  background-image: url("../img/sprite.png");
+  background-position: -5px -614px;
+}
+
+.social-btn-vk {
+  background-image: url("../img/sprite.png");
+  background-position: -5px -656px;
 }
 
 .footer-info {
@@ -1165,7 +1201,8 @@ main {
   content: "";
   width: 15px;
   height: 13px;
-  background-image: url("../img/heart-icon.png");
+  background-image: url("../img/sprite.png");
+  background-position: -5px -698px;
 }
 
 .footer-info a {
@@ -1193,7 +1230,7 @@ main {
   display: none;
 }
 
-/*.feedback {
+.feedback-open {
   position: fixed;
   top: 30%;
   left: 50%;
@@ -1258,4 +1295,3 @@ main {
   height: 16px;
   outline: 1px dotted blue;
 }
-*/
