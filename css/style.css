@@ -21,7 +21,7 @@ body {
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
-  background-color: #849d8f; /*после добавления слайдера оставить фон у обертки*/
+  background-color: #849d8f;
 }
 
 h1 {
@@ -52,6 +52,10 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+input {
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
 .btn {
@@ -90,7 +94,6 @@ li {
   max-width: 1146px;
   padding-right: 27px;
   padding-left: 27px;
-  background-color: #849d8f;
 }
 
 header {
@@ -257,7 +260,6 @@ header {
   background-image: url("../img/sprite.png");
   background-position: 2px 2px;
   vertical-align: top;
-  /*outline: 1px dotted #333333; для построения сетки*/
 }
 
 .user-block .search-btn:hover {
@@ -279,7 +281,6 @@ header {
   background-color: #f8f7f4;
   border-radius: 5px;
   box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
-  /*outline: 1px dashed orangered; для построения сетки*/
 }
 
 .user-block .search-form label {
@@ -361,7 +362,6 @@ header {
   border-radius: 5px;
   background-color: #f8f7f4;
   box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
-  /*outline: 1px dashed blue; для построения сетки*/
 }
 
 .user-block .login-form label {
@@ -698,7 +698,8 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-image: url(../img/hit-icon.png);
+  background-image: url(../img/sprite.png);
+  background-position: -5px -177px;
 }
 
 .gallery-item img {
@@ -734,7 +735,8 @@ main {
   z-index: 2;
   width: 29px;
   height: 34px;
-  background-image: url(../img/ruble-icon.png);
+  background-image: url(../img/sprite.png);
+  background-position: -5px -484px;
 }
 
 .gallery-item .item-name {
@@ -817,22 +819,23 @@ main {
   width: 50px;
   height: 50px;
   background-repeat: no-repeat;
+  background-image: url(../img/sprite.png);
 }
 
 .feature-item-1::before {
-  background-image: url(../img/feature-icon-1.png);
+  background-position: -5px -248px;
 }
 
 .feature-item-2::before {
-  background-image: url(../img/feature-icon-2.png);
+  background-position: -5px -307px;
 }
 
 .feature-item-3::before {
-  background-image: url(../img/feature-icon-3.png);
+  background-position: -5px -366px;
 }
 
 .feature-item-4::before {
-  background-image: url(../img/feature-icon-4.png);
+  background-position: -5px -425px;
 }
 
 .news-subscribe {
@@ -931,7 +934,7 @@ main {
   height: 429px;
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
-  margin-right: -27px;
+  margin-right: -27px; /*Вопрос: что делать с шириной карты? у меня у контейнеров паддинг 27 пикселей для ширины 1200. отрицательные маргины кажутся мне костыльным.*/
   margin-left: -27px;
 }
 
@@ -989,123 +992,359 @@ main {
 .breadcrumbs a {
   position: relative;
   margin-right: 18px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.breadcrumbs a::before {
+  position: absolute;
+  content: "";
+  top: 7px;
+  right: -14px;
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: rotate(-45deg);
 }
 
 .breadcrumbs a::after {
   position: absolute;
   content: "";
-  top: 6px;
-  right: -14px;
+  top: 7px;
+  right: -11px;
   display: block;
-  width: 6px;
-  height: 6px;
-  outline: 1px dotted blue; /*для построения сетки*/
+  width: 3px;
+  height: 3px;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
+
+.breadcrumbs span {
+  color: #ffffff;
 }
 
 .filter {
   margin-bottom: 40px;
+  font-size: 0;
 }
 
-.filter-top {
-  display: flex;
+.filter .filter-top {
   margin-bottom: 17px;
 }
 
-.filter-top > div {
+.filter-top .filter-top > div {
   margin-right: 15px;
 }
 
-.sorting label,
-.range p,
-.fatness p,
-.topping p {
+.filter .sorting label,
+.filter .range p,
+.filter .fatness p,
+.filter .topping p {
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
   color: #ffffff;
 }
 
-.sorting select,
-.fatness label,
-.topping-checkbox label
+.filter .sorting select,
+.filter .fatness label,
+.filter .topping-checkbox label,
 .filter .btn {
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
-/*  color: #ffffff;*/
+  color: #ffffff;
 }
 
-.sorting label {
+.filter-top .sorting {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.filter-top .sorting label {
   display: block;
   padding-left: 16px;
   margin-bottom: 5px;
 }
 
-.sorting select {
+.filter-top .sorting select { /*Вопрос: select немножно некрасивый: вертикальное выравнивание текста не по центру, а чуть ниже. Ни паддингов, ни высоты блока там нет. Оставить как есть? Он в пределах доп. отклонений.*/
   display: block;
   width: 193px;
   height: 36px;
   padding-left: 12px;
   border: none;
-  vertical-align: middle;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
-.sorting option {
-  display: block;
-  padding-top: 25px;
-  padding-left: 25px;
+/*Вопрос: как изменить отображение стрелочки у селекта? как нарисовать новую, идеи есть - псевдоэлемент, треугольник с помощью рамок. как убрать стандартную?*/
+
+.filter-top .sorting select:hover {
+  background-color: #ffffff;
+  color: #323232;
+}
+
+.filter-top .sorting option {
+  padding-left: 12px;
   font-size: 14px;
   line-height: 20px;
   font-family: "Roboto", "Arial", sans-serif;
 }
 
-.range p {
+.filter-top .range {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.filter-top .range p {
   margin-top: 0;
   margin-bottom: 5px;
   padding-left: 15px;
 }
 
-.range .range-bar {
+.filter-top .range .range-bar {
+  position: relative;
   width: 219px;
   height: 36px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.fatness p {
+.filter-top .range-bar::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: block;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-top .range-strip {
+  position: absolute;
+  top: 16px;
+  left: 34px;
+  right: 66px;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.filter-top .range-strip::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.filter-top .range-strip::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.filter-top .fatness {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.filter-top .fatness p {
   margin-top: 0;
   margin-bottom: 5px;
   padding-left: 15px;
 }
 
-.fatness-value {
-  width: 385px; /*убрать после добавления стилей переключателей*/
-  height: 36px;
-  padding-left: 15px;
-  padding-right: 15px;
+.filter-top .fatness .fatness-value {
+  height: 27px;
+  padding-top: 9px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  vertical-align: top;
+  font-size: 0;
 }
 
-.filter .topping {
+.filter-top .fatness .fatness-value div {
   display: inline-block;
-  margin-right: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  vertical-align: top;
 }
 
-.topping p {
+.filter-top .fatness .fatness-value div:last-child {
+  padding-right: 0;
+}
+
+.filter-top .fatness .fatness-value label {
+  position: relative;
+}
+
+.filter-top .fatness .fatness-value input {
+  display: none;
+}
+
+.filter-top .fatness .fatness-value label::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+.filter-top .fatness .fatness-value label:hover::before {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.filter-top .fatness-value input:checked ~ label::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -25px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.filter-top .fatness-value input:disabled ~ label::before {
+  opacity: 0.4;
+}
+
+.filter-top .fatness-value input:disabled ~ label::after {
+  display: none;
+}
+
+.filter-bottom .topping {
+  display: inline-block;
+  margin-right: 14px;
+  vertical-align: top;
+}
+
+.filter-bottom .topping p {
   margin-top: 0;
   margin-bottom: 5px;
   padding-left: 15px;
 }
 
-.topping-checkbox {
-  width: 673px; /*убрать после добавления стилей переключателей*/
-  height: 36px;
+.filter-bottom .topping .topping-checkbox {
+  height: 26px;
+  padding-top: 10px;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 17px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  vertical-align: top;
+  font-size: 0;
 }
 
-.filter .btn {
+.topping .topping-checkbox div {
   display: inline-block;
-  width: 144px;
+  padding-left: 32px;
+  padding-right: 23px;
+}
+
+.topping .topping-checkbox div:last-child {
+  padding-right: 0;
+}
+
+.topping .topping-checkbox input {
+  display: none;
+}
+
+.topping .topping-checkbox label {
+  position: relative;
+}
+
+.topping .topping-checkbox label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -32px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+
+.topping .topping-checkbox label:hover::before {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.topping-checkbox input:checked ~ label::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -28px;
+  display: block;
+  width: 9px;
+  height: 4px;
+  border-left: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(-45deg);
+}
+
+.topping-checkbox input:disabled ~ label::before {
+  opacity: 0.4;
+}
+
+.topping-checkbox input:disabled ~ label::after {
+  display: none;
+}
+
+.filter-bottom .btn {
+  display: inline-block;
+  margin-top: 21px;
   height: 36px;
-  text-align: center;
+  padding-left: 28px;
+  padding-right: 28px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: none;
+  box-shadow: none;
+}
+
+.filter-bottom .btn:hover {
+  background-color: #ffffff;
+  color: #323232;
+}
+
+.filter-bottom .btn:active {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: inset 0 2px 0 0 #696969;
+  color: #323232;
 }
 
 .pagination {
@@ -1135,6 +1374,7 @@ main {
   display: inline-block;
   width: 32px;
   height: 32px;
+  vertical-align: top;
   font-size: 0;
   border: 3px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
@@ -1157,7 +1397,7 @@ main {
 
 .social-btn-twit {
   background-image: url("../img/sprite.png");
-  background-position: -5px -530px;
+  background-position: -5px -530px; /*Вопрос: иконка твиттера съезжет на полпикселя вправо - если поставить бэкграунд позишн -6, то съезжает на полпикселя влево. Если страдать перфекционизмом, то нужно подвинуть ее в самой картинке спрайта?*/
 }
 
 .social-btn-inst {

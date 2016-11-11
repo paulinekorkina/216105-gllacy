@@ -119,28 +119,30 @@
               </select>
             </div>
             <div class="range">
-              <p>Цена: 100 руб. - 500 руб.</p>
-              <div class="range-bar"></div>
+              <p>Цена: 100 руб. &ndash; 500 руб.</p>
+              <div class="range-bar">
+                <div class="range-strip"></div>
+              </div>
             </div>
             <div class="fatness">
               <p>Жирность:</p>
               <div class="fatness-value">
-                <label>
-                  <input type="radio" name="fatness" value="0">
-                  0%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value="below-10" checked>
-                  до 10%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value="below-30">
-                  до 30%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value="above-30">
-                  выше 30%
-                </label>
+                <div>
+                  <input id="fatness1-id" type="radio" name="fatness" value="0">
+                  <label for="fatness1-id">0%</label>
+                </div>
+                <div>
+                  <input id="fatness2-id" type="radio" name="fatness" value="below10" checked>
+                  <label for="fatness2-id">до 10%</label>
+                </div>
+                <div>
+                  <input id="fatness3-id" type="radio" name="fatness" value="below30">
+                  <label for="fatness3-id">до 30%</label>
+                </div>
+                <div>
+                  <input id="fatness4-id" type="radio" name="fatness" value="above30">
+                  <label for="fatness4-id">выше 30%</label>
+                </div>
               </div>
             </div>
           </div>
@@ -148,29 +150,29 @@
             <div class="topping">
               <p>Наполнители:</p>
               <div class="topping-checkbox">
-                <label>
-                  <input type="checkbox" name="chocolate" checked>
-                  шоколадные
-                </label>
-                <label>
-                  <input type="checkbox" name="sugar" checked>
-                  сахарные присыпки
-                </label>
-                <label>
-                  <input type="checkbox" name="fruits">
-                  фрукты
-                </label>
-                <label>
-                  <input type="checkbox" name="syrup">
-                  сиропы
-                </label>
-                <label>
-                  <input type="checkbox" name="jam">
-                  джемы
-                </label>
+                <div>
+                  <input id="topping1-id" type="checkbox" name="chocolate" checked>
+                  <label for="topping1-id">шоколадные</label>
+                </div>
+                <div>
+                  <input id="topping2-id" type="checkbox" name="sugar" checked>
+                  <label for="topping2-id">сахарные присыпки</label>
+                </div>
+                <div>
+                  <input id="topping3-id" type="checkbox" name="fruits">
+                  <label for="topping3-id">фрукты</label>
+                </div>
+                <div>
+                  <input id="topping4-id" type="checkbox" name="syrup">
+                  <label for="topping4-id">сиропы</label>
+                </div>
+                <div>
+                  <input id="topping5-id" type="checkbox" name="jam">
+                  <label for="topping5-id">джемы</label>
+                </div>
               </div>
             </div>
-            <a class="btn" href="#">Применить</a>
+            <button class="btn">Применить</button>
           </div>
         </form>
       </section>
