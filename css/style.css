@@ -47,9 +47,23 @@ a {
   text-decoration: none;
 }
 
-input {
+input,
+textarea {
+  border: 1px solid #d3d3d2;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
   font-family: "Roboto", "Arial", sans-serif;
 }
+
+input:hover {
+  border-width: 2px;
+  border-color: #c7c6c5;
+}
+
+/*Вопрос: как стилизовать остальные два состояния инпута:
+когда курсор внутри и когда введен текст?
+Как закруглить углы у стандартной голубой обводки?*/
 
 .btn {
   border: none;
@@ -265,7 +279,7 @@ header {
   vertical-align: top;
 }
 
-.user-block .search-btn:hover {
+.user-block .search-wrap:hover .search-btn {
   background-color: #ffffff;
   background-position: 2px -25px;
 }
@@ -273,10 +287,10 @@ header {
 .user-block .search-wrap:hover .search-field {
   position: absolute;
   right: 1px;
-  top: 32px;
+  top: 0px;
   z-index: 1;
   display: block;
-  padding-top: 4px;
+  padding-top: 36px;
 }
 
 .user-block .search-form {
@@ -297,10 +311,12 @@ header {
   padding-top: 8px;
   padding-bottom: 10px;
   padding-left: 12px;
-  border: 1px solid #d3d3d2;
-  border-radius: 5px;
-  font-size: 14px;
-  line-height: 24px;
+}
+
+.user-block .search-form input:hover {
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 11px;
 }
 
 .user-block .login-wrap {
@@ -379,10 +395,12 @@ header {
   padding-top: 8px;
   padding-bottom: 10px;
   padding-left: 13px;
-  border: 1px solid #d3d3d2;
-  border-radius: inherit;
-  font-size: 14px;
-  line-height: 24px;
+}
+
+.user-block .login-form input:hover {
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 12px;
 }
 
 .user-block .login-form .btn {
@@ -681,8 +699,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: -2px;
-/*  margin-left: -13px;
-  margin-right: -13px;*/
 }
 
 .gallery {
@@ -694,9 +710,6 @@ main {
   flex-basis: 267px;
   flex-shrink: 1;
   margin-bottom: 39px;
-/*  padding-top: 6px;
-  padding-right: 13px;
-  padding-left: 13px;*/
   text-align: center;
 }
 
@@ -750,11 +763,20 @@ main {
 }
 
 .gallery-item .item-name {
+  /*Вопрос: названия некоторых позиций (сливочно-ванильное
+  с кусочками шоколада) переносятся не так, как в макете.
+  Если просто добавить паддинги, ломается подчеркивание.
+  По-видимому, лечится только добавлением обертки.
+  Подгонять или пофиг?*/
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
   color: #ffffff;
+}
+
+.gallery-item:hover .item-name {
+  border: none;
 }
 
 .gallery-item .btn-wrap {
@@ -900,6 +922,19 @@ main {
   text-decoration: underline;
 }
 
+/*Вопрос: в стайлгайде описаны ссылки похожего вида с
+полупрозрачным подчеркиванием (темный текст на белом фоне).
+Но эта ссылка визуально отличается - у нее подчеркивание
+непрозрачное.
+Стилизовать ли ее состояния? И если да, то делать ли подчеркивание
+другого цвета? А если нет, то где вообще в макете такие ссылки?
+*/
+
+.news-preview:hover,
+.news-preview:active {
+  color: #e84d37;
+}
+
 .subscribe {
   flex-basis: 408px;
   padding: 6px;
@@ -930,12 +965,15 @@ main {
   padding-left: 14px;
   padding-top: 9px;
   padding-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #d3d3d2;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Roboto", "Arial", sans-serif;
   color: #999999;
+}
+
+.subscribe-form input:hover {
+  padding-left: 13px;
+  padding-top: 8px;
+  padding-bottom: 9px;
 }
 
 .subscribe-form label {
@@ -957,9 +995,14 @@ main {
   height: 429px;
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
-  margin-right: -27px; /*Вопрос: что делать с шириной карты? у меня у контейнеров паддинг 27 пикселей для ширины 1200. отрицательные маргины кажутся мне костыльным.*/
+  margin-right: -27px;
   margin-left: -27px;
 }
+
+/*Вопрос: что делать с шириной карты? у меня у контейнеров
+паддинг 27 пикселей для ширины 1200. отрицательные маргины
+кажутся мне костыльным, это раз, и для ширины 900 они будут
+другие, это два.*/
 
 .map-contacts {
   position: absolute;
@@ -1100,7 +1143,7 @@ main {
   margin-bottom: 5px;
 }
 
-.filter-top .sorting select { /*Вопрос: select немножно некрасивый: вертикальное выравнивание текста не по центру, а чуть ниже. Ни паддингов, ни высоты блока там нет. Оставить как есть? Он в пределах доп. отклонений.*/
+.filter-top .sorting select {
   display: block;
   width: 193px;
   height: 36px;
@@ -1108,10 +1151,17 @@ main {
   border: none;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
+  /*line-height: 36px;
+  vertical-align: middle;*/
   font-family: "Roboto", "Arial", sans-serif;
 }
-
-/*Вопрос: как изменить отображение стрелочки у селекта? как нарисовать новую, идеи есть - псевдоэлемент, треугольник с помощью рамок. как убрать стандартную?*/
+/*Вопрос: select немножно некрасивый: вертикальное
+выравнивание текста не по центру, а чуть ниже.
+Ни паддингов, ни высоты блока там нет. Оставить как есть?
+Он в пределах доп. отклонений.*/
+/*Вопрос2: как изменить отображение стрелочки у селекта?
+Как нарисовать новую, это я знаю - псевдоэлемент,
+треугольник с помощью рамок. А как убрать стандартную?*/
 
 .filter-top .sorting select:hover {
   background-color: #ffffff;
@@ -1262,12 +1312,9 @@ main {
   background-color: #ffffff;
 }
 
-.filter-top .fatness-value input:disabled ~ label::before {
-  opacity: 0.4;
-}
-
+.filter-top .fatness-value input:disabled ~ label::before,
 .filter-top .fatness-value input:disabled ~ label::after {
-  display: none;
+  opacity: 0.4;
 }
 
 .filter-bottom .topping {
@@ -1342,12 +1389,9 @@ main {
   transform: rotate(-45deg);
 }
 
-.topping-checkbox input:disabled ~ label::before {
-  opacity: 0.4;
-}
-
+.topping-checkbox input:disabled ~ label::before,
 .topping-checkbox input:disabled ~ label::after {
-  display: none;
+  opacity: 0.4;
 }
 
 .filter-bottom .btn {
@@ -1512,8 +1556,12 @@ main {
 
 .social-btn-twit {
   background-image: url("../img/sprite.png");
-  background-position: -5px -530px; /*Вопрос: иконка твиттера съезжет на полпикселя вправо - если поставить бэкграунд позишн -6, то съезжает на полпикселя влево. Если страдать перфекционизмом, то нужно подвинуть ее в самой картинке спрайта?*/
+  background-position: -5px -530px;
 }
+
+/*Вопрос: иконка твиттера съезжет на полпикселя вправо -
+если поставить бэкграунд позишн -6, то съезжает на полпикселя влево.
+Если страдать перфекционизмом, то нужно подвинуть ее в самой картинке спрайта?*/
 
 .social-btn-inst {
   background-image: url("../img/sprite.png");
@@ -1605,12 +1653,13 @@ main {
   height: 400px;
   margin-left: -237px;
   padding: 16px 24px 26px 24px;
+  border-radius: 12px;
   background-color: #f8f7f4;
 }
 
 .feedback b {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 19px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 400;
@@ -1623,32 +1672,41 @@ main {
 .feedback input {
   width: 250px;
   margin-bottom: 20px;
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   padding-left: 14px;
   font-size: 16px;
   line-height: 24px;
 }
 
+.feedback input:hover {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 13px;
+}
+
 .feedback textarea {
   width: 100%;
-  height: 155px;
+  height: 156px;
   box-sizing: border-box;
-  margin-bottom: 20px;
-  padding-top: 10px;
+  margin-bottom: 18px;
+  padding-top: 9px;
   padding-left: 14px;
+  border: 1px solid #d3d3d2;
+  border-radius: 5px;
+  font-size: 16px;
+  background: none;
 }
+
+/*Вопрос: как убрать у текстареа в нижнем правом углу черточки?*/
 
 .feedback .btn {
   float: right;
-  padding-top: 8px;
-  padding-right: 22px;
-  padding-bottom: 10px;
+  padding-top: 9px;
+  padding-right: 23px;
+  padding-bottom: 11px;
   padding-left: 23px;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: bold;
+  border-radius: 23px;
 }
 
 .feedback-close {
@@ -1658,5 +1716,27 @@ main {
   display: block;
   width: 16px;
   height: 16px;
-  outline: 1px dotted blue;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.feedback-close::before,
+.feedback-close::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -3px;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.feedback-close::before {
+  transform: rotate(45deg);
+}
+
+.feedback-close::after {
+  transform: rotate(-45deg);
 }
