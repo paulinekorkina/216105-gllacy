@@ -5,13 +5,6 @@ body {
   padding: 0;
 }
 
-/*@font-face {
-    font-family: "Roboto";
-    src:
-        local("Roboto Regular"),
-        url("../fonts/roboto.woff") format("woff");
-}*/
-
 body {
   display: flex;
   flex-direction: column;
@@ -62,13 +55,23 @@ input {
   border: none;
   border-radius: 15px;
   background-image: linear-gradient(#f26843, #e74b36);
-  box-shadow: 0 1px 0 0 rgba(172, 16, 0, 0.64);
+  box-shadow: 0 1px 1px 0 rgba(172, 16, 0, 0.64);
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
   font-family: "Roboto", "Arial", sans-serif;
   color: #ffffff;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-image: linear-gradient(#f58669, #ec6f5e);
+  box-shadow: 0 1px 1px 0 rgb(172, 16, 0);
+}
+
+.btn:active {
+  background-image: linear-gradient(#d74632, #e1613e);
+  box-shadow: inset 0 1px 1px 0 rgb(172, 16, 0);
 }
 
 /*div,
@@ -137,7 +140,7 @@ header {
 }
 
 .main-menu > li > a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .main-menu .menu-active {
@@ -747,7 +750,7 @@ main {
 }
 
 .gallery-item .item-name {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -1013,7 +1016,13 @@ main {
   position: relative;
   margin-right: 18px;
   color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:active {
+  color: #ffbc9e;
+  border-color: rgba(255, 188, 158, 0.3);
 }
 
 .breadcrumbs a::before {
@@ -1551,7 +1560,7 @@ main {
   /*padding: 2px;*/
   font-size: 13px;
   line-height: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .ha-logo-img {
@@ -1571,7 +1580,15 @@ main {
 }
 
 .footer-copyright p > a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-info a:hover,
+.footer-info a:active,
+.footer-copyright a:hover,
+.footer-copyright a:active {
+  color: #ffbc9e;
+  border-color: rgba(255, 188, 158, 0.3);
 }
 
 .feedback {
