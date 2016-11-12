@@ -72,7 +72,7 @@ input {
 }
 
 /*div,
-section,
+article,
 ul {
   outline: 1px dashed orangered;
 }
@@ -677,14 +677,20 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: -4px;
+  margin-bottom: -2px;
+/*  margin-left: -13px;
+  margin-right: -13px;*/
+}
+
+.gallery {
+  margin-bottom: 40px;
 }
 
 .gallery-item {
   position: relative;
   flex-basis: 267px;
   flex-shrink: 1;
-  margin-bottom: 42px;
+  margin-bottom: 39px;
 /*  padding-top: 6px;
   padding-right: 13px;
   padding-left: 13px;*/
@@ -692,9 +698,10 @@ main {
 }
 
 .gallery-hit::before {
-  position: absolute;;
-  display: block;
   content: "";
+  position: absolute;
+  z-index: 4;
+  display: block;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -710,7 +717,7 @@ main {
 .item-price {
   position: absolute;
   top: 192px;
-  z-index: 1;
+  z-index: 3;
   font-weight: bold;
   text-shadow: 1px 1px 0 rgba(49, 50, 53, 0.5);
   color: #ffffff;
@@ -727,12 +734,12 @@ main {
 }
 
 .item-price::before {
-  position: absolute;
-  display: block;
   content: "";
+  position: absolute;
   top: 7px;
   left: 81px;
-  z-index: 2;
+  z-index: 3;
+  display: block;
   width: 29px;
   height: 34px;
   background-image: url(../img/sprite.png);
@@ -740,9 +747,6 @@ main {
 }
 
 .gallery-item .item-name {
-  position: relative;
-  margin-top: 6px;
-  margin-bottom: -2px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 16px;
   line-height: 22px;
@@ -750,32 +754,48 @@ main {
   color: #ffffff;
 }
 
-.item-name::after {
-  position: absolute;
-  display: block;
-  content: "";
-  width: 95%;
-  height: 40px;
-}
-
-.gallery-item button {
+.gallery-item .btn-wrap {
   display: none;
 }
 
-.gallery-item:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.gallery-item .btn {
+  display: none;
 }
 
-.gallery-item:hover button {
+.gallery-item:hover .btn-wrap {
+/*Вопрос: Это не слишком костыльный способ?..*/
   position: absolute;
-  left: 33px;
-  top: 333px;
+  top: -6px;
+  left: -13px;
   z-index: 1;
   display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-bottom: 73px;
+  padding-top: 9px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover .btn {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  display: block;
   width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-left: -100px;
+  padding-top: 9px;
+  padding-bottom: 11px;
   border-radius: 18px / 23px;
+  text-align: center;
+}
+
+.gallery-item:hover img {
+  position: relative;
+  z-index: 3;
 }
 
 .features {
@@ -1351,6 +1371,77 @@ main {
   height: 26px;
   margin-bottom: 30px;
   text-align: right;
+  font-size: 0;
+}
+
+.pagination a {
+  display: inline-block;
+  min-width: 26px;
+  height: 26px;
+  margin-right: 3px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.pagination .prev,
+.pagination .next {
+  position: relative;
+}
+
+.pagination .next {
+  margin-right: -5px;
+}
+
+.pagination .prev::before,
+.pagination .next::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.pagination .next::before {
+  transform: rotate(225deg);
+}
+
+.pagination .prev:active::before,
+.pagination .next:active::before {
+  border-color: #323232;
+}
+
+.pagination .disabled::before {
+  opacity: 0.2;
+}
+
+.pagination .current {
+  background-color: #ffffff;
+  color: #323232;
+}
+
+.pagination a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.pagination a:active {
+  background-color: #ffffff;
+  color: #323232;
+}
+
+.pagination .disabled:hover,
+.pagination .disabled:active {
+  background: none;
 }
 
 .main-footer {
@@ -1359,6 +1450,21 @@ main {
   justify-content: space-between;
   padding-top: 19px;
   padding-bottom: 23px;
+}
+
+.footer-inner {
+  position: relative;
+}
+
+.footer-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 27px;
+  right: 27px;
+  display: block;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .main-footer,
@@ -1417,16 +1523,12 @@ main {
 
 .footer-info {
   display: flex;
+  margin-left: 4px;
   padding-top: 13px;
 }
 
-.footer-info-column {
-  display: flex;
-  flex-direction: column;
-}
-
 .footer-info-column:first-child {
-  margin-right: 28px;
+  margin-right: 31px;
 }
 
 .footer-providers {
@@ -1436,8 +1538,8 @@ main {
 
 .footer-providers::before {
   position: absolute;
-  left: -18px;
-  top: 5px;
+  left: -22px;
+  top: 2px;
   content: "";
   width: 15px;
   height: 13px;
@@ -1445,18 +1547,20 @@ main {
   background-position: -5px -698px;
 }
 
-.footer-info a {
-  display: inline-block;
-  padding: 2px;
+.footer-info-column a {
+  /*padding: 2px;*/
   font-size: 13px;
   line-height: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .ha-logo-img {
   display: block;
-  width: 108px;
+  width: 110px;
   height: 38px;
   background-image: url("../img/ha-logo.png");
+  background-repeat: no-repeat;
+  background-position: 2px, 2px;
 }
 
 .footer-copyright p {
@@ -1464,6 +1568,10 @@ main {
   margin-bottom: 0;
   font-size: 12px;
   line-height: 18px;
+}
+
+.footer-copyright p > a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .feedback {
