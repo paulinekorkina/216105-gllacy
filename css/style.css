@@ -14,7 +14,54 @@ body {
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
+}
+
+body > input[type="radio"] {
+  display: none;
+}
+
+.site-wrapper {
+  min-width: 940px; /*А не 900?*/
   background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.site-wrapper:before,
+.site-wrapper:after {
+  content: "";
+  visibility: hidden;
+}
+
+.site-wrapper:before {
+  background-image: url("slide-2.png");
+}
+
+.site-wrapper:after {
+  background-image: url("slide-3.png");
+}
+
+.content-wrapper {
+  min-width: 846px;
+  max-width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+}
+
+.inner-content-wrapper {
+  min-width: 846px;
+  max-width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+  background-color: #849d8f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 h1 {
@@ -102,16 +149,6 @@ a,
 li {
   outline: 1px dashed #555555;
 }*/
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 846px;
-  max-width: 1146px;
-  padding-right: 27px;
-  padding-left: 27px;
-}
 
 header {
   margin-bottom: 10px;
@@ -622,15 +659,119 @@ header {
   color: #ffffff;
 }
 
+.slider {
+  position: relative;
+  margin-bottom: 40px;
+  padding-top: 303px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-title {
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.slide-btn {
+  display: inline-block;
+  padding: 9px 40px 12px 40px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+  vertical-align: top;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  background: #f26843;
+  background:    -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background:         linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 100px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+}
+
+.slide-btn:hover {
+  background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.slide-btn:active {
+  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  z-index: 20;
+  font-size: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  vertical-align: top;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-controls label:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#btn-1:checked ~ .site-wrapper #slide1,
+#btn-2:checked ~ .site-wrapper #slide2,
+#btn-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#btn-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+}
+
+#btn-2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/slider-2.png");
+}
+
+#btn-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/slider-3.png");
+}
+
+#btn-1:checked ~ .site-wrapper label[for="btn-1"],
+#btn-2:checked ~ .site-wrapper label[for="btn-2"],
+#btn-3:checked ~ .site-wrapper label[for="btn-3"] {
+  background-color: #ffffff;
+}
+
 main {
   flex-grow: 1;
 }
 
-.slider {
-  height: 518px; /*для имитации высоты слайдера*/
+/*.slider {
+  height: 518px; для имитации высоты слайдера
   margin-bottom: 40px;
 }
-
+*/
 .bonus {
   display: flex;
   flex-direction: row;
