@@ -1677,6 +1677,7 @@ main {
   font-size: 0;
   border: 3px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
+  background-image: url("../img/sprite.png");
   opacity: 0.8;
 }
 
@@ -1695,26 +1696,22 @@ main {
 }
 
 .social-btn-twit {
-  background-image: url("../img/sprite.png");
+  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -530px;
 }
 
-/*Вопрос: иконка твиттера съезжет на полпикселя вправо -
-если поставить бэкграунд позишн -6, то съезжает на полпикселя влево.
-Если страдать перфекционизмом, то нужно подвинуть ее в самой картинке спрайта?*/
-
 .social-btn-inst {
-  background-image: url("../img/sprite.png");
+  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -572px;
 }
 
 .social-btn-fb {
-  background-image: url("../img/sprite.png");
+  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -614px;
 }
 
 .social-btn-vk {
-  background-image: url("../img/sprite.png");
+  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -656px;
 }
 
