@@ -14,6 +14,7 @@ body {
   color: #323232;
   font-weight: normal;
   font-family: "Roboto", "Arial", sans-serif;
+  background-color: #849d8f;
 }
 
 body > input[type="radio"] {
@@ -22,6 +23,7 @@ body > input[type="radio"] {
 
 .site-wrapper {
   min-width: 940px; /*А не 900?*/
+  width: 100%;
   background-color: #849d8f;
   background-image: url("../img/slider-1.png");
   background-repeat: no-repeat;
@@ -36,11 +38,11 @@ body > input[type="radio"] {
 }
 
 .site-wrapper:before {
-  background-image: url("slide-2.png");
+  background-image: url("../img/slider-2.png");
 }
 
 .site-wrapper:after {
-  background-image: url("slide-3.png");
+  background-image: url("../img/slider-3.png");
 }
 
 .content-wrapper {
@@ -1057,24 +1059,20 @@ main {
   display: inline-block;
   max-width: 283px;
   margin-top: -11px;
+}
+
+.news-preview a {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
   font-size: 24px;
   line-height: 30px;
   font-weight: bold;
   color: #323232;
-  text-decoration: underline;
 }
 
-/*Вопрос: в стайлгайде описаны ссылки похожего вида с
-полупрозрачным подчеркиванием (темный текст на белом фоне).
-Но эта ссылка визуально отличается - у нее подчеркивание
-непрозрачное.
-Стилизовать ли ее состояния? И если да, то делать ли подчеркивание
-другого цвета? А если нет, то где вообще в макете такие ссылки?
-*/
-
-.news-preview:hover,
-.news-preview:active {
+.news-preview a:hover,
+.news-preview a:active {
   color: #e84d37;
+  border-bottom-color: rgba(232, 77, 55, 0.3);
 }
 
 .subscribe {
@@ -1785,6 +1783,19 @@ main {
   display: none;
 }
 
+/*@keyframes bounce {
+  0% {transform: translateY(-2000px); }
+  70% {transform: translateY(30px); }
+  90% {transform: translateY(-10px); }
+  100% {transform: translateY(0); }
+}*/
+
+@keyframes bounce {
+  0% {transform: scale(0); }
+  80% {transform: scale(1.05); }
+  100% {transform: scale(1); }
+}
+
 .feedback-open {
   position: fixed;
   top: 30%;
@@ -1797,6 +1808,17 @@ main {
   padding: 16px 24px 26px 24px;
   border-radius: 12px;
   background-color: #f8f7f4;
+  animation: bounce 0.6s;
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px); }
+  20%, 40%, 60%, 80% {transform: translateX(10px); }
+}
+
+.feedback-error {
+  animation: shake 0.6s;
 }
 
 .feedback b {
@@ -1837,10 +1859,8 @@ main {
   border: 1px solid #d3d3d2;
   border-radius: 5px;
   font-size: 16px;
-  background: none;
+  background: #ffffff;
 }
-
-/*Вопрос: как убрать у текстареа в нижнем правом углу черточки?*/
 
 .feedback .btn {
   float: right;
@@ -1881,4 +1901,19 @@ main {
 
 .feedback-close::after {
   transform: rotate(-45deg);
+}
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.feedback-overlay-open {
+  display: block;
 }
