@@ -22,7 +22,7 @@ body > input[type="radio"] {
 }
 
 .site-wrapper {
-  min-width: 940px; /*А не 900?*/
+  min-width: 860px;
   width: 100%;
   background-color: #849d8f;
   background-image: url("../img/slider-1.png");
@@ -46,18 +46,30 @@ body > input[type="radio"] {
 }
 
 .content-wrapper {
-  min-width: 846px;
+  min-width: 860px;
   max-width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
 }
 
+@media (max-width: 1156px) {
+  .content-wrapper {
+    padding: 0 20px;
+  }
+}
+
 .inner-content-wrapper {
-  min-width: 846px;
+  min-width: 860px;
   max-width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
   background-color: #849d8f;
+}
+
+@media (max-width: 1156px) {
+  .inner-content-wrapper {
+    padding: 0 20px;
+  }
 }
 
 .container {
@@ -109,10 +121,6 @@ input:hover {
   border-width: 2px;
   border-color: #c7c6c5;
 }
-
-/*Вопрос: как стилизовать остальные два состояния инпута:
-когда курсор внутри и когда введен текст?
-Как закруглить углы у стандартной голубой обводки?*/
 
 .btn {
   border: none;
@@ -770,11 +778,6 @@ main {
   flex-grow: 1;
 }
 
-/*.slider {
-  height: 518px; для имитации высоты слайдера
-  margin-bottom: 40px;
-}
-*/
 .bonus {
   display: flex;
   flex-direction: row;
@@ -787,6 +790,7 @@ main {
   flex-basis: 420px;
   flex-grow: 1;
   flex-shrink: 1;
+  min-height: 191px;
   padding-top: 16px;
   padding-right: 20px;
   padding-bottom: 23px;
@@ -799,6 +803,12 @@ main {
   margin-right: 27px;
   background-color: #9b0123;
   background: url(../img/bonus-left.jpg);
+}
+
+@media (max-width: 1156px) {
+  .bonus-item-left {
+    margin-right: 20px;
+  }
 }
 
 .bonus-item-right {
@@ -816,7 +826,7 @@ main {
 }
 
 .bonus-item p {
-  margin-bottom: 44px;
+  margin-bottom: auto;
   font-size: 18px;
   line-height: 22px;
   font-weight: bold;
@@ -834,14 +844,13 @@ main {
   line-height: 24px;
   font-weight: bold;
   color: #ffffff;
-
 }
 
 .hit,
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: -2px;
 }
 
@@ -851,10 +860,24 @@ main {
 
 .gallery-item {
   position: relative;
-  flex-basis: 267px;
-  flex-shrink: 1;
+  /*flex-basis: 267px;*/
+  max-width: 267px;
+  /*flex-grow: 1;
+  flex-shrink: 1;*/
+  width: 23%;
   margin-bottom: 39px;
+  margin-right: 27px;
   text-align: center;
+}
+
+@media (max-width: 1195px) {
+  .gallery-item {
+    margin-right: 20px;
+  }
+}
+
+.gallery-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .gallery-hit::before {
@@ -870,13 +893,18 @@ main {
 }
 
 .gallery-item img {
+  width: 100%;
   border-radius: 50%;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
+}
+
+.gallery-item .gallery-img-wrap {
+  position: relative;
 }
 
 .item-price {
   position: absolute;
-  top: 192px;
+  bottom: 6px;
   z-index: 3;
   font-weight: bold;
   text-shadow: 1px 1px 0 rgba(49, 50, 53, 0.5);
@@ -907,11 +935,6 @@ main {
 }
 
 .gallery-item .item-name {
-  /*Вопрос: названия некоторых позиций (сливочно-ванильное
-  с кусочками шоколада) переносятся не так, как в макете.
-  Если просто добавить паддинги, ломается подчеркивание.
-  По-видимому, лечится только добавлением обертки.
-  Подгонять или пофиг?*/
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 16px;
   line-height: 22px;
@@ -932,7 +955,6 @@ main {
 }
 
 .gallery-item:hover .btn-wrap {
-/*Вопрос: Это не слишком костыльный способ?..*/
   position: absolute;
   top: -6px;
   left: -13px;
@@ -946,7 +968,15 @@ main {
   padding-top: 9px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1195px) {
+  .gallery-item:hover .btn-wrap {
+    left: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .gallery-item:hover .btn {
@@ -960,6 +990,14 @@ main {
   padding-bottom: 11px;
   border-radius: 18px / 23px;
   text-align: center;
+}
+
+@media (max-width: 1195px) {
+  .gallery-item:hover .btn {
+    bottom: 17px;
+    width: 194px;
+    margin-left: -97px;
+  }
 }
 
 .gallery-item:hover img {
@@ -983,26 +1021,36 @@ main {
 .feature-wrap {
   display: flex;
   justify-content: space-between;
-}
-
-.feature-wrap-column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 540px;
-  flex-shrink: 1;
+  flex-wrap: wrap;
 }
 
 .feature-item {
   position: relative;
   margin-top: 0;
-  margin-bottom: 22px;
-  margin-left: 57px;
+  margin-bottom: 23px;
+  padding-left: 57px;
+}
+
+.feature-item {
+  width: 47%;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.feature-item:nth-child(2n+1) {
+  margin-right: 27px;
+}
+
+@media (max-width: 1156px) {
+  .feature-item:nth-child(2n+1) {
+    margin-right: 20px;
+  }
 }
 
 .feature-item::before {
   position: absolute;
   top: -12px;
-  left: -57px;
+  left: 0;
   display: block;
   content: "";
   width: 50px;
@@ -1015,11 +1063,11 @@ main {
   background-position: -5px -248px;
 }
 
-.feature-item-2::before {
+.feature-item-3::before {
   background-position: -5px -307px;
 }
 
-.feature-item-3::before {
+.feature-item-2::before {
   background-position: -5px -366px;
 }
 
@@ -1037,8 +1085,6 @@ main {
   flex-basis: 400px;
   flex-shrink: 1;
   flex-grow: 1;
-/*  padding-right: 20px;
-  padding-left: 20px;*/
   border-radius: 15px;
 }
 
@@ -1046,7 +1092,14 @@ main {
   margin-right: 27px;
   padding-top: 7px;
   padding-left: 20px;
-  background: url(../img/news-background.jpg) no-repeat;
+  background-image: url(../img/news-background.jpg);
+  background-position: right top;
+}
+
+@media (max-width: 1156px) {
+  .news {
+    margin-right: 20px;
+  }
 }
 
 .news-title {
@@ -1062,26 +1115,31 @@ main {
 }
 
 .news-preview a {
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  /*border-bottom: 3px solid rgba(0, 0, 0, 0.3);*/
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
   line-height: 30px;
   font-weight: bold;
   color: #323232;
+  text-decoration: underline;
 }
 
 .news-preview a:hover,
 .news-preview a:active {
   color: #e84d37;
-  border-bottom-color: rgba(232, 77, 55, 0.3);
+  /*border-bottom-color: rgba(232, 77, 55, 0.3);*/
 }
 
 .subscribe {
   flex-basis: 408px;
-  padding: 6px;
+  padding: 5px 6px;
   background-image: url(../img/subscribe-background.jpg);
 }
 
 .subscribe-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 143px;
   background-color: #f8f7f4;
   padding-top: 33px;
   padding-bottom: 33px;
@@ -1092,11 +1150,12 @@ main {
 
 .subscribe p {
   margin-top: -5px;
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
 
 .subscribe-form {
   display: flex;
+  margin-top: auto;
 }
 
 .subscribe-form input {
@@ -1139,10 +1198,12 @@ main {
   margin-left: -27px;
 }
 
-/*Вопрос: что делать с шириной карты? у меня у контейнеров
-паддинг 27 пикселей для ширины 1200. отрицательные маргины
-кажутся мне костыльным, это раз, и для ширины 900 они будут
-другие, это два.*/
+@media (max-width: 1156px) {
+  .map {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
 
 .map-contacts {
   position: absolute;
@@ -1156,6 +1217,12 @@ main {
   padding-left: 25px;
   border-radius: 15px;
   background-color: #fffffe;
+}
+
+@media (max-width: 1156px) {
+  .map-contacts {
+    right: 20px;
+  }
 }
 
 .map-contacts p {
@@ -1291,17 +1358,8 @@ main {
   border: none;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
-  /*line-height: 36px;
-  vertical-align: middle;*/
   font-family: "Roboto", "Arial", sans-serif;
 }
-/*Вопрос: select немножно некрасивый: вертикальное
-выравнивание текста не по центру, а чуть ниже.
-Ни паддингов, ни высоты блока там нет. Оставить как есть?
-Он в пределах доп. отклонений.*/
-/*Вопрос2: как изменить отображение стрелочки у селекта?
-Как нарисовать новую, это я знаю - псевдоэлемент,
-треугольник с помощью рамок. А как убрать стандартную?*/
 
 .filter-top .sorting select:hover {
   background-color: #ffffff;
@@ -1313,6 +1371,7 @@ main {
   font-size: 14px;
   line-height: 20px;
   font-family: "Roboto", "Arial", sans-serif;
+  color: #323232;
 }
 
 .filter-top .range {
@@ -1473,7 +1532,7 @@ main {
   height: 26px;
   padding-top: 10px;
   padding-left: 15px;
-  padding-right: 17px;
+  padding-right: 15px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   vertical-align: top;
@@ -1653,9 +1712,10 @@ main {
   content: "";
   position: absolute;
   top: 0;
-  left: 27px;
-  right: 27px;
+  /*left: 0;
+  right: 0;*/
   display: block;
+  width: 100%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -1683,6 +1743,7 @@ main {
 
 .social-btn:hover {
   opacity: 1;
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .social-btn:active {
@@ -1695,23 +1756,27 @@ main {
   margin-right: 8px;
 }
 
+@media (max-width: 1156px) {
+  .social-btn-twit,
+  .social-btn-inst,
+  .social-btn-fb {
+    margin-right: 7px;
+  }
+}
+
 .social-btn-twit {
-  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -530px;
 }
 
 .social-btn-inst {
-  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -572px;
 }
 
 .social-btn-fb {
-  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -614px;
 }
 
 .social-btn-vk {
-  /*background-image: url("../img/sprite.png");*/
   background-position: -5px -656px;
 }
 
@@ -1779,13 +1844,6 @@ main {
 .feedback {
   display: none;
 }
-
-/*@keyframes bounce {
-  0% {transform: translateY(-2000px); }
-  70% {transform: translateY(30px); }
-  90% {transform: translateY(-10px); }
-  100% {transform: translateY(0); }
-}*/
 
 @keyframes bounce {
   0% {transform: scale(0); }
@@ -1914,3 +1972,27 @@ main {
 .feedback-overlay-open {
   display: block;
 }
+
+/*
+
+Вопросы:
+
+- свой пин на карте
+
+- разве иконка соцсетей увеличивается при наведении? в стайлгайде не очевидно, но вроде бы нет
+
+- не могу воспроизвести ошибку с цветами в селекте (при выборе пункта цвет текста остальных меняется на белый и на белом фоне его не видно). в каком браузере она появляется?
+
+- проблема с неправильным переносом названий в каталоге: один случай решили добавлением неразрывного пробела. но во втором ряду в первой слева мороженке (Сливочное с брусничным джемом) у меня всё в одну строчку, а в макете перенос. br?
+
+***Резина***
+
+- с резиной блок товаров съезжается к центру на пару пикселей. (ширина товара: 23%, маргин справа 27px). 24% уже не влазит, с дробными почему-то не работает.
+
+- у широкого макета паддинги 27 пикселей, у узкого - 20. На какой ширине сделать переход из одного в другое?
+
+- цена в резине видимо должна позиционироваться относительно картинки товара. обернуть картинку в див?
+
+- в хроме инструмент разработчика учитывает ширину полосы прокрутки при измерении экрана? ее ширину определить на глаз? чтобы тестировать сайт на разных ширинах. Потому что когда в экран ровненько влазит макет из perfictpixel, инструмент показывает ширину 1217.
+какую ширину считает за верную media - ширину окна браузера или видимой области?
+*/
