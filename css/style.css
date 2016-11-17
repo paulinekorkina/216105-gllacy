@@ -169,8 +169,8 @@ header {
 }
 
 .index-logo {
-  padding-top: 9px;
   margin-left: -6px;
+  padding-top: 9px;
 }
 
 .main-navigation {
@@ -193,10 +193,7 @@ header {
 }
 
 .main-menu > li {
-  padding-top: 6px;
-  padding-right: 14px;
-  padding-bottom: 5px;
-  padding-left: 14px;
+  padding: 6px 14px 5px 14px;
   border-radius: 18px;
 }
 
@@ -232,8 +229,8 @@ header {
 
 .main-menu .sub-menu ul {
   padding-top: 6px;
-  padding-left: 0;
   padding-bottom: 3px;
+  padding-left: 0;
   list-style: none;
   white-space: nowrap;
   background-color: #f8f7f4;
@@ -244,10 +241,7 @@ header {
 .main-menu .sub-menu a {
   display: block;
   margin-bottom: 4px;
-  padding-top: 6px;
-  padding-right: 20px;
-  padding-bottom: 6px;
-  padding-left: 20px;
+  padding: 6px 20px;
   font-size: 14px;
   line-height: 16px;
   font-weight: normal;
@@ -376,10 +370,7 @@ header {
   display: inline-block;
   width: 60px;
   margin-right: 10px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 8px 16px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   text-align: right;
@@ -422,10 +413,7 @@ header {
 .user-block .login-form {
   width: 241px;
   height: 175px;
-  padding-top: 20px;
-  padding-right: 17px;
-  padding-bottom: 20px;
-  padding-left: 19px;
+  padding: 20px 17px 20px 19px;
   border-radius: 5px;
   background-color: #f8f7f4;
   box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
@@ -454,10 +442,7 @@ header {
 .user-block .login-form .btn {
   float: left;
   margin-right: 20px;
-  padding-top: 10px;
-  padding-right: 25px;
-  padding-bottom: 10px;
-  padding-left: 25px;
+  padding: 10px 25px;
   border-radius: 19px / 26px;
 }
 
@@ -476,10 +461,7 @@ header {
   position: relative;
   display: inline-block;
   width: 74px;
-  padding-top: 8px;
-  padding-left: 8px;
-  padding-right: 35px;
-  padding-bottom: 8px;
+  padding: 8px 35px 8px 8px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   text-align: right;
@@ -488,8 +470,8 @@ header {
 
 .user-block .cart-full {
   width: 90px;
-  padding-left: 12px;
   padding-right: 17px;
+  padding-left: 12px;
   background-color: #ffffff;
   color: #323232;
 }
@@ -637,7 +619,7 @@ header {
 .user-block .cart-preview button {
   display: inline-block;
   vertical-align: top;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 20px / 25px;
   text-align: right;
 }
@@ -791,10 +773,7 @@ main {
   flex-grow: 1;
   flex-shrink: 1;
   min-height: 191px;
-  padding-top: 16px;
-  padding-right: 20px;
-  padding-bottom: 23px;
-  padding-left: 20px;
+  padding: 16px 20px 23px 20px;
   border-radius: 15px;
   color: #ffffff;
 }
@@ -835,10 +814,7 @@ main {
 .bonus-item a {
   align-self: flex-end;
   display: inline-block;
-  padding-top: 10px;
-  padding-right: 23px;
-  padding-bottom: 12px;
-  padding-left: 23px;
+  padding: 10px 23px 12px 23px;
   border-radius: 23px;
   font-size: 18px;
   line-height: 24px;
@@ -935,12 +911,17 @@ main {
 }
 
 .gallery-item .item-name {
+  margin: 0 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
   color: #ffffff;
 }
+
+/*.item-name-wrap {
+  padding: 0 8px;
+}*/
 
 .gallery-item:hover .item-name {
   border: none;
@@ -962,10 +943,7 @@ main {
   display: block;
   width: 100%;
   height: 100%;
-  padding-left: 13px;
-  padding-right: 13px;
-  padding-bottom: 73px;
-  padding-top: 9px;
+  padding: 9px 13px 73px 13px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
@@ -974,8 +952,8 @@ main {
 @media (max-width: 1195px) {
   .gallery-item:hover .btn-wrap {
     left: -10px;
-    padding-left: 10px;
     padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -1008,8 +986,8 @@ main {
 .features {
   margin-bottom: 40px;
   padding-right: 20px;
-  padding-left: 20px;
   padding-bottom: 3px;
+  padding-left: 20px;
   border-radius: 15px;
   background-image: url(../img/features-background.jpg);
 }
@@ -1141,10 +1119,7 @@ main {
   flex-direction: column;
   min-height: 143px;
   background-color: #f8f7f4;
-  padding-top: 33px;
-  padding-bottom: 33px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 33px 20px;
   border-radius: 15px;
 }
 
@@ -1161,18 +1136,18 @@ main {
 .subscribe-form input {
   flex-grow: 1;
   margin-right: 11px;
-  padding-left: 14px;
   padding-top: 9px;
   padding-bottom: 10px;
+  padding-left: 14px;
   font-size: 16px;
   line-height: 24px;
   color: #999999;
 }
 
 .subscribe-form input:hover {
-  padding-left: 13px;
   padding-top: 8px;
   padding-bottom: 9px;
+  padding-left: 13px;
 }
 
 .subscribe-form label {
@@ -1182,10 +1157,7 @@ main {
 .subscribe-form button {
   display: inline-block;
   flex-shrink: 0;
-  padding-top: 8px;
-  padding-right: 18px;
-  padding-bottom: 10px;
-  padding-left: 18px;
+  padding: 8px 18px 10px 18px;
   border-radius: 23px;
 }
 
@@ -1211,10 +1183,7 @@ main {
   right: 27px;
   z-index: 1;
   width: 252px;
-  padding-top: 30px;
-  padding-right: 25px;
-  padding-bottom: 30px;
-  padding-left: 25px;
+  padding: 30px 25px;
   border-radius: 15px;
   background-color: #fffffe;
 }
@@ -1248,10 +1217,7 @@ main {
 .map-contacts .btn {
   display: block;
   margin-top: 24px;
-  padding-top: 9px;
-  padding-right: 27px;
-  padding-bottom: 11px;
-  padding-left: 28px;
+  padding: 9px 27px 11px 28px;
   border-radius: 23px;
 }
 
@@ -1455,8 +1421,8 @@ main {
 .filter-top .fatness .fatness-value {
   height: 27px;
   padding-top: 9px;
-  padding-left: 16px;
   padding-right: 16px;
+  padding-left: 16px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   vertical-align: top;
@@ -1465,8 +1431,8 @@ main {
 
 .filter-top .fatness .fatness-value div {
   display: inline-block;
-  padding-left: 30px;
   padding-right: 20px;
+  padding-left: 30px;
   vertical-align: top;
 }
 
@@ -1531,8 +1497,8 @@ main {
 .filter-bottom .topping .topping-checkbox {
   height: 26px;
   padding-top: 10px;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   vertical-align: top;
@@ -1541,8 +1507,8 @@ main {
 
 .topping .topping-checkbox div {
   display: inline-block;
-  padding-left: 32px;
   padding-right: 23px;
+  padding-left: 32px;
 }
 
 .topping .topping-checkbox div:last-child {
@@ -1597,8 +1563,8 @@ main {
   display: inline-block;
   margin-top: 21px;
   height: 36px;
-  padding-left: 28px;
   padding-right: 28px;
+  padding-left: 28px;
   border: 2px solid #ffffff;
   border-radius: 20px;
   vertical-align: top;
@@ -1919,10 +1885,7 @@ main {
 
 .feedback .btn {
   float: right;
-  padding-top: 9px;
-  padding-right: 23px;
-  padding-bottom: 11px;
-  padding-left: 23px;
+  padding: 9px 23px 11px 23px;
   border-radius: 23px;
 }
 
@@ -1979,20 +1942,28 @@ main {
 
 - свой пин на карте
 
-- разве иконка соцсетей увеличивается при наведении? в стайлгайде не очевидно, но вроде бы нет
-
 - не могу воспроизвести ошибку с цветами в селекте (при выборе пункта цвет текста остальных меняется на белый и на белом фоне его не видно). в каком браузере она появляется?
 
-- проблема с неправильным переносом названий в каталоге: один случай решили добавлением неразрывного пробела. но во втором ряду в первой слева мороженке (Сливочное с брусничным джемом) у меня всё в одну строчку, а в макете перенос. br?
+- проблема с неправильным переносом названий в каталоге:
+пример:
 
-***Резина***
+ширина 900:
+сливочное с
+брусничным джемом
 
-- с резиной блок товаров съезжается к центру на пару пикселей. (ширина товара: 23%, маргин справа 27px). 24% уже не влазит, с дробными почему-то не работает.
+ширина 1200:
+сливочное с брусничным
+джемом
 
-- у широкого макета паддинги 27 пикселей, у узкого - 20. На какой ширине сделать переход из одного в другое?
+на моем сайте:
+сливочное с брусничным джемом
 
-- цена в резине видимо должна позиционироваться относительно картинки товара. обернуть картинку в див?
+если добавить паддинги, подчеркивание уезжает за пределы текста.
+если добавить маргины, ломается центровка в названиях, занимающих
+несколько строк.
 
-- в хроме инструмент разработчика учитывает ширину полосы прокрутки при измерении экрана? ее ширину определить на глаз? чтобы тестировать сайт на разных ширинах. Потому что когда в экран ровненько влазит макет из perfictpixel, инструмент показывает ширину 1217.
-какую ширину считает за верную media - ширину окна браузера или видимой области?
+у меня только два решения: или обертка, или &nbsp;
+и <br> подгонять под макет для ширины 1200 и забить на ширину 900.
+
+кроме этого товара, есть еще парочка таких же проблемных.
 */
