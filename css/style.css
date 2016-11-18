@@ -6,9 +6,16 @@ body {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 16px;
   line-height: 22px;
   color: #323232;
@@ -28,6 +35,7 @@ body > input[type="radio"] {
   background-image: url("../img/slider-1.png");
   background-repeat: no-repeat;
   background-position: top center;
+  -webkit-transition: background-image 0.5s ease, background-color 0.5s ease;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
@@ -73,8 +81,13 @@ body > input[type="radio"] {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
@@ -125,6 +138,7 @@ input:hover {
 .btn {
   border: none;
   border-radius: 15px;
+  background-image: -webkit-linear-gradient(#f26843, #e74b36);
   background-image: linear-gradient(#f26843, #e74b36);
   box-shadow: 0 1px 1px 0 rgba(172, 16, 0, 0.64);
   font-size: 18px;
@@ -136,11 +150,13 @@ input:hover {
 }
 
 .btn:hover {
+  background-image: -webkit-linear-gradient(#f58669, #ec6f5e);
   background-image: linear-gradient(#f58669, #ec6f5e);
   box-shadow: 0 1px 1px 0 rgb(172, 16, 0);
 }
 
 .btn:active {
+  background-image: -webkit-linear-gradient(#d74632, #e1613e);
   background-image: linear-gradient(#d74632, #e1613e);
   box-shadow: inset 0 1px 1px 0 rgb(172, 16, 0);
 }
@@ -165,6 +181,8 @@ header {
 }
 
 .header-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -174,8 +192,12 @@ header {
 }
 
 .main-navigation {
-  flex-grow: 1;
-  align-self: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding-left: 0;
 }
 
@@ -187,6 +209,8 @@ header {
 }
 
 .main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: -24px;
   list-style: none;
@@ -288,8 +312,11 @@ header {
 }
 
 .user-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .user-block a {
@@ -448,9 +475,16 @@ header {
 
 .user-block .login-form a {
   display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 13px;
   line-height: 13px;
   color: #323232;
+}
+
+.user-block .login-form a:hover,
+.user-block .login-form a:active {
+  color: #e84d37;
+  border-color: rgba(232, 77, 55, 0.3);
 }
 
 .user-block .cart-wrap {
@@ -550,7 +584,8 @@ header {
   height: 1px;
   width: 14px;
   background-color: #323232;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .user-block .cart-preview .delete-icon::after {
@@ -561,7 +596,8 @@ header {
   height: 1px;
   width: 14px;
   background-color: #323232;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .user-block .cart-preview .cart-img {
@@ -626,7 +662,8 @@ header {
 
 .contacts {
   position: relative;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   height: 0;
 }
 
@@ -684,7 +721,6 @@ header {
   text-decoration: none;
   text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
   background: #f26843;
-  background:    -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
   background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
   background:         linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   border-radius: 100px;
@@ -692,14 +728,12 @@ header {
 }
 
 .slide-btn:hover {
-  background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
   background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
   background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .slide-btn:active {
-  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
   background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
   background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
@@ -757,21 +791,37 @@ header {
 }
 
 main {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .bonus {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 40px;
 }
 
 .bonus-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-basis: 420px;
-  flex-grow: 1;
-  flex-shrink: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 420px;
+      flex-basis: 420px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   min-height: 191px;
   padding: 16px 20px 23px 20px;
   border-radius: 15px;
@@ -812,7 +862,8 @@ main {
 }
 
 .bonus-item a {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   display: inline-block;
   padding: 10px 23px 12px 23px;
   border-radius: 23px;
@@ -824,9 +875,14 @@ main {
 
 .hit,
 .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: -2px;
 }
 
@@ -946,7 +1002,7 @@ main {
   padding: 9px 13px 73px 13px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1195px) {
@@ -997,9 +1053,14 @@ main {
 }
 
 .feature-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .feature-item {
@@ -1011,7 +1072,9 @@ main {
 
 .feature-item {
   width: 47%;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   box-sizing: border-box;
 }
 
@@ -1054,15 +1117,21 @@ main {
 }
 
 .news-subscribe {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
     margin-bottom: 40px;
 }
 
 .news,
 .subscribe {
-  flex-basis: 400px;
-  flex-shrink: 1;
-  flex-grow: 1;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-radius: 15px;
 }
 
@@ -1109,14 +1178,20 @@ main {
 }
 
 .subscribe {
-  flex-basis: 408px;
+  -ms-flex-preferred-size: 408px;
+      flex-basis: 408px;
   padding: 5px 6px;
   background-image: url(../img/subscribe-background.jpg);
 }
 
 .subscribe-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 143px;
   background-color: #f8f7f4;
   padding: 33px 20px;
@@ -1129,12 +1204,16 @@ main {
 }
 
 .subscribe-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: auto;
 }
 
 .subscribe-form input {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin-right: 11px;
   padding-top: 9px;
   padding-bottom: 10px;
@@ -1156,31 +1235,32 @@ main {
 
 .subscribe-form button {
   display: inline-block;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   padding: 8px 18px 10px 18px;
   border-radius: 23px;
 }
 
 .map {
   position: relative;
-  height: 429px;
+  /*height: 429px;
   background-image: url("../img/map.jpg");
-  background-repeat: no-repeat;
-  margin-right: -27px;
-  margin-left: -27px;
+  background-repeat: no-repeat;*/
+  /*margin-right: -27px;
+  margin-left: -27px;*/
 }
 
-@media (max-width: 1156px) {
+/*@media (max-width: 1156px) {
   .map {
     margin-right: -20px;
     margin-left: -20px;
   }
-}
+}*/
 
 .map-contacts {
   position: absolute;
   top: 62px;
-  right: 27px;
+  right: 0;
   z-index: 1;
   width: 252px;
   padding: 30px 25px;
@@ -1188,11 +1268,11 @@ main {
   background-color: #fffffe;
 }
 
-@media (max-width: 1156px) {
+/*@media (max-width: 1156px) {
   .map-contacts {
     right: 20px;
   }
-}
+}*/
 
 .map-contacts p {
   margin-top: 0;
@@ -1251,7 +1331,8 @@ main {
   height: 3px;
   border-right: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .breadcrumbs a::after {
@@ -1264,7 +1345,8 @@ main {
   height: 3px;
   border-right: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .breadcrumbs span {
@@ -1316,11 +1398,16 @@ main {
   margin-bottom: 5px;
 }
 
+/*.filter-top .sorting .select-wrap {
+  width: 193px;
+}*/
+
 .filter-top .sorting select {
   display: block;
   width: 193px;
   height: 36px;
   padding-left: 12px;
+  overflow: hidden;
   border: none;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1469,6 +1556,7 @@ main {
   content: "";
   position: absolute;
   top: 6px;
+  -ms-top: 5px;
   left: -25px;
   display: block;
   width: 10px;
@@ -1551,7 +1639,8 @@ main {
   height: 4px;
   border-left: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .topping-checkbox input:disabled ~ label::before,
@@ -1626,11 +1715,13 @@ main {
   height: 8px;
   border-left: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .pagination .next::before {
-  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
 }
 
 .pagination .prev:active::before,
@@ -1663,9 +1754,16 @@ main {
 }
 
 .main-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 19px;
   padding-bottom: 23px;
 }
@@ -1747,6 +1845,8 @@ main {
 }
 
 .footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 4px;
   padding-top: 13px;
@@ -1811,10 +1911,16 @@ main {
   display: none;
 }
 
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: scale(0);transform: scale(0); }
+  80% {-webkit-transform: scale(1.05);transform: scale(1.05); }
+  100% {-webkit-transform: scale(1);transform: scale(1); }
+}
+
 @keyframes bounce {
-  0% {transform: scale(0); }
-  80% {transform: scale(1.05); }
-  100% {transform: scale(1); }
+  0% {-webkit-transform: scale(0);transform: scale(0); }
+  80% {-webkit-transform: scale(1.05);transform: scale(1.05); }
+  100% {-webkit-transform: scale(1);transform: scale(1); }
 }
 
 .feedback-open {
@@ -1829,17 +1935,25 @@ main {
   padding: 16px 24px 26px 24px;
   border-radius: 12px;
   background-color: #f8f7f4;
-  animation: bounce 0.6s;
+  -webkit-animation: bounce 0.6s;
+          animation: bounce 0.6s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {-webkit-transform: translateX(0);transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);transform: translateX(-10px); }
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);transform: translateX(10px); }
 }
 
 @keyframes shake {
-  0%, 100% {transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px); }
-  20%, 40%, 60%, 80% {transform: translateX(10px); }
+  0%, 100% {-webkit-transform: translateX(0);transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);transform: translateX(-10px); }
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);transform: translateX(10px); }
 }
 
 .feedback-error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .feedback b {
@@ -1914,11 +2028,13 @@ main {
 }
 
 .feedback-close::before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .feedback-close::after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .feedback-overlay {
@@ -1962,8 +2078,29 @@ main {
 если добавить маргины, ломается центровка в названиях, занимающих
 несколько строк.
 
-у меня только два решения: или обертка, или &nbsp;
-и <br> подгонять под макет для ширины 1200 и забить на ширину 900.
+у меня только два решения: или обертка, или
+и  подгонять под макет для ширины 1200 и забить на ширину 900.
 
 кроме этого товара, есть еще парочка таких же проблемных.
+
+В ИЕ точка в радиобаттонах на 1 пиксель ниже, чем в других браузерах -
+строчка 1478, свойство top. Если поменять значение с 6 на 5,
+то в ИЕ все хорошо, в других браузерах - нет. Что делать?
+
+В ИЕ на главной резина работает хорошо, а на странице каталога
+картинки не уменьшаются
+
+То же с футером: на главной элементы там, где должны быть, а в каталоге
+- нет
+
+В ИЕ на стр. каталога не работает курсор пойнтер в фильтре (на точечках
+ползунка)
+
+Достала карту из оберток. Вопрос: блок контактов должен быть спозиционирован
+как на макете, т.е. у него правая координата совпадает с правым краем
+блока подписки? Если да, тогда у меня сейчас всё как надо.
+Но мне пришлось убрать статичную карту (которая на случай незагрузки
+джаваскрипта), иначе никак не получалось. Можно так оставить?
+
+Дробные проценты так и не работают(
 */
