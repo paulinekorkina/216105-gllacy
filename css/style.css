@@ -60,24 +60,12 @@ body > input[type="radio"] {
   padding: 0 27px;
 }
 
-@media (max-width: 1156px) {
-  .content-wrapper {
-    padding: 0 20px;
-  }
-}
-
 .inner-content-wrapper {
   min-width: 860px;
   max-width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
   background-color: #849d8f;
-}
-
-@media (max-width: 1156px) {
-  .inner-content-wrapper {
-    padding: 0 20px;
-  }
 }
 
 .container {
@@ -227,6 +215,10 @@ header {
 
 .main-menu .menu-active {
   background-color: #d07058;
+}
+
+.main-menu .menu-active > a {
+  border: none;
 }
 
 .main-menu > li:hover {
@@ -834,12 +826,6 @@ main {
   background: url(../img/bonus-left.jpg);
 }
 
-@media (max-width: 1156px) {
-  .bonus-item-left {
-    margin-right: 20px;
-  }
-}
-
 .bonus-item-right {
   background-color: #432416;
   background: url(../img/bonus-right.jpg);
@@ -894,18 +880,12 @@ main {
   position: relative;
   /*flex-basis: 267px;*/
   max-width: 267px;
-  /*flex-grow: 1;
-  flex-shrink: 1;*/
-  width: 23%;
+  /*flex-grow: 1;*/
+  /*flex-shrink: 1;*/
+  width: 23.26%;
   margin-bottom: 39px;
-  margin-right: 27px;
+  margin-right: 26px;
   text-align: center;
-}
-
-@media (max-width: 1195px) {
-  .gallery-item {
-    margin-right: 20px;
-  }
 }
 
 .gallery-item:nth-child(4n) {
@@ -927,7 +907,7 @@ main {
 .gallery-item img {
   width: 100%;
   border-radius: 50%;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .gallery-item .gallery-img-wrap {
@@ -1005,14 +985,6 @@ main {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 1195px) {
-  .gallery-item:hover .btn-wrap {
-    left: -10px;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-
 .gallery-item:hover .btn {
   position: absolute;
   left: 50%;
@@ -1024,14 +996,6 @@ main {
   padding-bottom: 11px;
   border-radius: 18px / 23px;
   text-align: center;
-}
-
-@media (max-width: 1195px) {
-  .gallery-item:hover .btn {
-    bottom: 17px;
-    width: 194px;
-    margin-left: -97px;
-  }
 }
 
 .gallery-item:hover img {
@@ -1066,7 +1030,7 @@ main {
 .feature-item {
   position: relative;
   margin-top: 0;
-  margin-bottom: 23px;
+  margin-bottom: 22px;
   padding-left: 57px;
 }
 
@@ -1080,12 +1044,6 @@ main {
 
 .feature-item:nth-child(2n+1) {
   margin-right: 27px;
-}
-
-@media (max-width: 1156px) {
-  .feature-item:nth-child(2n+1) {
-    margin-right: 20px;
-  }
 }
 
 .feature-item::before {
@@ -1141,12 +1099,6 @@ main {
   padding-left: 20px;
   background-image: url(../img/news-background.jpg);
   background-position: right top;
-}
-
-@media (max-width: 1156px) {
-  .news {
-    margin-right: 20px;
-  }
 }
 
 .news-title {
@@ -1243,19 +1195,7 @@ main {
 
 .map {
   position: relative;
-  /*height: 429px;
-  background-image: url("../img/map.jpg");
-  background-repeat: no-repeat;*/
-  /*margin-right: -27px;
-  margin-left: -27px;*/
 }
-
-/*@media (max-width: 1156px) {
-  .map {
-    margin-right: -20px;
-    margin-left: -20px;
-  }
-}*/
 
 .map-contacts {
   position: absolute;
@@ -1267,12 +1207,6 @@ main {
   border-radius: 15px;
   background-color: #fffffe;
 }
-
-/*@media (max-width: 1156px) {
-  .map-contacts {
-    right: 20px;
-  }
-}*/
 
 .map-contacts p {
   margin-top: 0;
@@ -1705,6 +1639,7 @@ main {
 }
 
 .pagination {
+  position: relative;
   height: 26px;
   margin-bottom: 30px;
   text-align: right;
@@ -1783,6 +1718,16 @@ main {
   background: none;
 }
 
+.pagination::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .main-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1796,22 +1741,6 @@ main {
           justify-content: space-between;
   padding-top: 19px;
   padding-bottom: 23px;
-}
-
-.footer-inner {
-  position: relative;
-}
-
-.footer-inner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  /*left: 0;
-  right: 0;*/
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .main-footer,
@@ -1848,14 +1777,6 @@ main {
 .social-btn-inst,
 .social-btn-fb {
   margin-right: 8px;
-}
-
-@media (max-width: 1156px) {
-  .social-btn-twit,
-  .social-btn-inst,
-  .social-btn-fb {
-    margin-right: 7px;
-  }
 }
 
 .social-btn-twit {
@@ -2082,55 +2003,47 @@ main {
   display: block;
 }
 
-/*
+@media (max-width: 1195px) {
+  .content-wrapper {
+    padding: 0 20px;
+  }
 
-Вопросы:
+  .inner-content-wrapper {
+    padding: 0 20px;
+  }
 
-- свой пин на карте
+  .bonus-item-left {
+    margin-right: 20px;
+  }
 
-- не могу воспроизвести ошибку с цветами в селекте (при выборе пункта цвет текста остальных меняется на белый и на белом фоне его не видно). в каком браузере она появляется?
+  .gallery-item {
+    width: 23.25%;
+    margin-right: 20px;
+  }
 
-- проблема с неправильным переносом названий в каталоге:
-пример:
+  .gallery-item:hover .btn-wrap {
+    left: -10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 
-ширина 900:
-сливочное с
-брусничным джемом
+  .gallery-item:hover .btn {
+    bottom: 17px;
+    width: 194px;
+    margin-left: -97px;
+  }
 
-ширина 1200:
-сливочное с брусничным
-джемом
+  .feature-item:nth-child(2n+1) {
+    margin-right: 20px;
+  }
 
-на моем сайте:
-сливочное с брусничным джемом
+  .news {
+    margin-right: 20px;
+  }
 
-если добавить паддинги, подчеркивание уезжает за пределы текста.
-если добавить маргины, ломается центровка в названиях, занимающих
-несколько строк.
-
-у меня только два решения: или обертка, или
-и  подгонять под макет для ширины 1200 и забить на ширину 900.
-
-кроме этого товара, есть еще парочка таких же проблемных.
-
-В ИЕ точка в радиобаттонах на 1 пиксель ниже, чем в других браузерах -
-строчка 1478, свойство top. Если поменять значение с 6 на 5,
-то в ИЕ все хорошо, в других браузерах - нет. Что делать?
-
-В ИЕ на главной резина работает хорошо, а на странице каталога
-картинки не уменьшаются
-
-То же с футером: на главной элементы там, где должны быть, а в каталоге
-- нет
-
-В ИЕ на стр. каталога не работает курсор пойнтер в фильтре (на точечках
-ползунка)
-
-Достала карту из оберток. Вопрос: блок контактов должен быть спозиционирован
-как на макете, т.е. у него правая координата совпадает с правым краем
-блока подписки? Если да, тогда у меня сейчас всё как надо.
-Но мне пришлось убрать статичную карту (которая на случай незагрузки
-джаваскрипта), иначе никак не получалось. Можно так оставить?
-
-Дробные проценты так и не работают(
-*/
+  .social-btn-twit,
+  .social-btn-inst,
+  .social-btn-fb {
+    margin-right: 7px;
+  }
+}
