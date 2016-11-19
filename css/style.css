@@ -1301,6 +1301,13 @@ main {
   border-radius: 23px;
 }
 
+.yandex-map {
+  height: 430px;
+  background-image: url("../img/map.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .breadcrumbs {
   margin-bottom: 5px;
   padding-top: 10px;
