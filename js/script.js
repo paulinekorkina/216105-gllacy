@@ -57,3 +57,26 @@ form.addEventListener("submit", function(event) {
     localStorage.setItem("email", email.value);
   }
 });
+
+ymaps.ready(init);
+var myMap,
+    myPlacemark;
+
+function init(){
+  myMap = new ymaps.Map("map", {
+    center: [59.93935775, 30.32935047],
+    zoom: 16
+  });
+
+  myPlacemark = new ymaps.Placemark([59.93870788, 30.32301386], {
+    hintContent: 'Gllacy',
+    balloonContent: 'Большая Конюшенная, 19/8'
+  }, {
+    iconLayout: 'default#image',
+    iconImageHref: 'img/pin.png',
+    iconImageSize: [218, 142],
+    iconImageOffset: [-40, -135]
+  });
+
+  myMap.geoObjects.add(myPlacemark);
+};

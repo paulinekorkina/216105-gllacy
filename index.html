@@ -21,7 +21,7 @@
             </div>
             <nav class="main-navigation">
                 <ul class="main-menu">
-                  <li class="menu-catalog"><a href="#">Каталог</a>
+                  <li class="main-list menu-catalog"><a href="#">Каталог</a>
                     <div class="sub-menu">
                       <ul>
                         <li><a class="menu-latest" href="#">Новинки</a></li>
@@ -32,8 +32,8 @@
                       </ul>
                     </div>
                   </li>
-                  <li><a href="#">Доставка и оплата</a></li>
-                  <li><a href="#">О Компании</a></li>
+                  <li class="main-list"><a href="#">Доставка и оплата</a></li>
+                  <li class="main-list"><a href="#">О Компании</a></li>
                 </ul>
             </nav>
             <div class="user-block">
@@ -225,7 +225,7 @@
           <div class="footer-copyright">
             <div class="footer-ha-logo">
               <a class="ha-logo-img" href="#"></a>
-              <p>Сделано в <a href="#">HTML Academy</a> &copy; 2016</p>
+              <p>Сделано в <a class="ha-link" href="#">HTML Academy</a> &copy; 2016</p>
             </div>
           </div>
         </footer>
@@ -245,31 +245,7 @@
         <div class="feedback-overlay"></div>
       </div>
     </div>
-    <script src="js/script.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script type="text/javascript">
-        ymaps.ready(init);
-        var myMap,
-            myPlacemark;
-
-        function init(){
-            myMap = new ymaps.Map("map", {
-                center: [59.93935775, 30.32935047],
-                zoom: 16
-            });
-
-            myPlacemark = new ymaps.Placemark([59.93870788, 30.32301386], {
-                hintContent: 'Gllacy',
-                balloonContent: 'Большая Конюшенная, 19/8'
-            }, {
-            iconLayout: 'default#image',
-            iconImageHref: 'img/pin.png',
-            iconImageSize: [218, 142],
-            iconImageOffset: [-40, -135]
-        });
-
-            myMap.geoObjects.add(myPlacemark);
-        }
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
