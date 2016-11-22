@@ -116,7 +116,7 @@ textarea {
 }
 
 input {
-  font-weight: bold;
+  outline: none;
 }
 
 input:hover {
@@ -127,7 +127,6 @@ input:hover {
 input:focus {
   border-width: 2px;
   border-color: #8fbdec;
-  outline: none;
 }
 
 .btn {
@@ -164,7 +163,6 @@ article,
 ul {
   outline: 1px dashed orangered;
 }
-
 h2,
 h3,
 b,
@@ -365,32 +363,14 @@ header {
 }
 
 .search-form {
-  height: 65px;
-  padding: 19px 15px 0 15px;
+  padding: 19px 15px;
   background-color: #f8f7f4;
   border-radius: 5px;
   box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.4);
 }
 
 .search-form label {
-  display: inline-block;
-  padding-left: 14px;
-  font-size: 14px;
-  line-height: 14px;
-  vertical-align: top;
-  color: #999999;
-  transform: translateY(-28px);
-}
-
-.search-input:focus + label {
-  color: #5b9ddf;
-  transform: translateY(-61px);
-  transition: transform 0.2s ease;
-}
-
-.search-form .lostfocus {
-  color: #999999;
-  transform: translateY(-61px);
+  display: none;
 }
 
 .search-form input {
@@ -402,7 +382,8 @@ header {
   padding-left: 12px;
 }
 
-.search-form input:hover {
+.search-form input:hover,
+.search-form input:focus {
   padding-top: 7px;
   padding-bottom: 9px;
   padding-left: 11px;
@@ -467,22 +448,13 @@ header {
 }
 
 .login-form label {
-  display: inline-block;
-  padding-left: 14px;
-  font-size: 14px;
-  line-height: 14px;
-  vertical-align: top;
-  color: #999999;
-  transform: translateY(-29px);
-}
-
-.login-form label:last-of-type {
-  margin-left: -120px;
+  display: none;
 }
 
 .login-form input {
   display: inline-block;
   width: 100%;
+  margin-bottom: 20px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-left: 13px;
@@ -490,31 +462,15 @@ header {
   box-sizing: border-box;
 }
 
-.login-form input:last-of-type {
-  margin-top: -2px;
-}
-
-.login-input:hover,
-.login-input:focus {
+.login-form input:hover,
+.login-form input:focus {
   padding-top: 7px;
   padding-bottom: 9px;
   padding-left: 12px;
 }
 
-.login-input:focus + label {
-  color: #5b9ddf;
-  transform: translateY(-61px);
-  transition: transform 0.2s ease;
-}
-
-.login-form .lostfocus {
-  color: #999999;
-  transform: translateY(-61px);
-}
-
 .login-form .btn {
   float: left;
-  margin-top: 20px;
   margin-right: 19px;
   padding: 10px 25px;
   border-radius: 19px / 26px;
@@ -522,8 +478,6 @@ header {
 
 .login-form a {
   display: inline-block;
-  margin-top: -40px;
-  margin-left: 120px;
   font-size: 13px;
   line-height: 13px;
   vertical-align: top;
@@ -532,7 +486,8 @@ header {
 }
 
 .login-form .lost-password {
-  margin-bottom: 6px;
+  margin-top: 5px;
+  margin-bottom: 7px;
 }
 
 .login-form a:hover,
@@ -1211,9 +1166,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 158px;
+  min-height: 143px;
   background-color: #f8f7f4;
-  padding: 33px 20px 18px 20px;
+  padding: 33px 20px;
   border-radius: 15px;
 }
 
@@ -1229,56 +1184,34 @@ main {
   margin-top: auto;
 }
 
-.subscribe-field {
+.subscribe-form input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin-right: 11px;
-}
-
-.subscribe-form input {
-  display: block;
-  width: 100%;
   padding-top: 9px;
-  padding-bottom: 9px;
+  padding-bottom: 10px;
   padding-left: 14px;
-  box-sizing: border-box;
   font-size: 16px;
   line-height: 24px;
+  color: #999999;
 }
 
 .subscribe-form input:hover,
 .subscribe-form input:focus {
   padding-top: 8px;
-  padding-bottom: 8px;
+  padding-bottom: 9px;
   padding-left: 13px;
 }
 
 .subscribe-form label {
-  display: block;
-  padding-left: 14px;
-  font-size: 16px;
-  line-height: 16px;
-  color: #999999;
-  transform: translateY(-30px);
-}
-
-.subscribe-input:focus + label {
-  color: #5b9ddf;
-  transform: translateY(-65px);
-  transition: transform 0.2s ease;
-}
-
-.subscribe-form .lostfocus {
-  color: #999999;
-  transform: translateY(-65px);
+  display: none;
 }
 
 .subscribe-form button {
   display: inline-block;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  margin-bottom: 16px;
   padding: 8px 18px 10px 18px;
   vertical-align: top;
   border-radius: 23px;
@@ -1990,34 +1923,14 @@ main {
   display: none;
 }
 
-.feedback label:not(:last-of-type) {
-  display: block;
-  padding-left: 14px;
-  font-size: 16px;
-  line-height: 16px;
-  color: #999999;
-  transform: translateY(-34px);
-}
-
 .feedback input {
   width: 250px;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   padding-top: 9px;
   padding-bottom: 9px;
   padding-left: 14px;
   font-size: 16px;
   line-height: 24px;
-}
-
-.feedback-input:focus + label {
-  color: #5b9ddf;
-  transform: translateY(-64px);
-  transition: transform 0.2s ease;
-}
-
-.feedback-form .lostfocus {
-  color: #999999;
-  transform: translateY(-64px);
 }
 
 .feedback input:hover,
