@@ -120,12 +120,12 @@ input {
 
 input:hover {
   border-color: #c7c6c5;
-  box-shadow: 0 0 1px 0 #c7c6c5;
+  box-shadow: 0 0 0 1px #c7c6c5;
 }
 
 input:focus {
   border-color: #8fbdec;
-  box-shadow: 0 0 1px 0 #8fbdec;
+  box-shadow: 0 0 0 1px #8fbdec;
 }
 
 .btn {
