@@ -112,18 +112,17 @@ textarea {
   font-family: "Roboto", "Arial", sans-serif;
   border: 1px solid #d3d3d2;
   border-radius: 5px;
-}
-
-input {
   outline: none;
 }
 
-input:hover {
+input:hover,
+textarea:hover {
   border-color: #c7c6c5;
   box-shadow: 0 0 0 1px #c7c6c5;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border-color: #8fbdec;
   box-shadow: 0 0 0 1px #8fbdec;
 }
