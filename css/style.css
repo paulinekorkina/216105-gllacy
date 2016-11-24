@@ -1,6 +1,6 @@
 html,
 body {
-  min-height: 100%;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
 }
@@ -61,8 +61,7 @@ body > input[type="radio"] {
 }
 
 .inner-content-wrapper {
-  min-width: 860px;
-  max-width: 1146px;
+  width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
   background-color: #849d8f;
@@ -120,13 +119,13 @@ input {
 }
 
 input:hover {
-  border-width: 2px;
   border-color: #c7c6c5;
+  box-shadow: 0 0 1px 0 #c7c6c5;
 }
 
 input:focus {
-  border-width: 2px;
   border-color: #8fbdec;
+  box-shadow: 0 0 1px 0 #8fbdec;
 }
 
 .btn {
@@ -240,6 +239,7 @@ header {
 
 .main-list:hover a {
   color: #323232;
+  border: none;
 }
 
 .main-menu .menu-catalog {
@@ -385,14 +385,6 @@ header {
   line-height: 14px;
 }
 
-.search-form input:hover,
-.search-form input:focus {
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 11px;
-}
-
 .user-block .login-wrap {
   position: relative;
 }
@@ -459,7 +451,7 @@ header {
   display: inline-block;
   width: 100%;
   margin-bottom: 20px;
-  padding-top: 12px;  
+  padding-top: 12px;
   padding-right: 1px;
   padding-bottom: 13px;
   padding-left: 14px;
@@ -467,14 +459,6 @@ header {
   line-height: 14px;
   vertical-align: top;
   box-sizing: border-box;
-}
-
-.login-form input:hover,
-.login-form input:focus {
-  padding-top: 11px;
-  padding-right: 0;
-  padding-bottom: 12px;
-  padding-left: 13px;
 }
 
 .login-form .btn {
@@ -1205,13 +1189,6 @@ main {
   color: #999999;
 }
 
-.subscribe-form input:hover,
-.subscribe-form input:focus {
-  padding-top: 8px;
-  padding-bottom: 9px;
-  padding-left: 12px;
-}
-
 .subscribe-form label {
   display: none;
 }
@@ -1561,7 +1538,7 @@ main {
 .topping .topping-checkbox {
   height: 26px;
   padding-top: 10px;
-  padding-right: 15px;
+  padding-right: 17px;
   padding-left: 15px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1940,13 +1917,6 @@ main {
   line-height: 16px;
 }
 
-.feedback input:hover,
-.feedback input:focus {
-  padding-top: 11px;
-  padding-bottom: 10px;
-  padding-left: 13px;
-}
-
 .feedback textarea {
   width: 100%;
   height: 156px;
@@ -2013,59 +1983,4 @@ main {
 
 .feedback-overlay-open {
   display: block;
-}
-
-@media (max-width: 1195px) {
-  .content-wrapper {
-    padding: 0 20px;
-  }
-
-  .inner-content-wrapper {
-    padding: 0 20px;
-  }
-
-  .bonus-item-left {
-    margin-right: 20px;
-  }
-
-  .gallery-item {
-    width: 23.25%;
-    margin-right: 20px;
-  }
-
-  .gallery-item:hover .btn-wrap {
-    left: -10px;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .gallery-item:hover .btn {
-    bottom: 17px;
-    width: 194px;
-    margin-left: -97px;
-  }
-
-  .feature-item:nth-child(2n+1) {
-    margin-right: 20px;
-  }
-
-  .news {
-    margin-right: 20px;
-  }
-
-  .topping-checkbox div {
-    padding-right: 22px;
-}
-
-  .social-btn-twit,
-  .social-btn-inst,
-  .social-btn-fb {
-    margin-right: 7px;
-  }
-}
-
-@media (max-width: 950px) {
-  .feature-item {
-    max-width: 420px;
-  }
 }
