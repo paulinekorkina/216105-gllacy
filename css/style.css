@@ -960,17 +960,12 @@ main {
 }
 
 .gallery-item .item-name {
-  margin: 0 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
   color: #ffffff;
 }
-
-/*.item-name-wrap {
-  padding: 0 8px;
-}*/
 
 .gallery-item:hover .item-name {
   border: none;
@@ -1472,8 +1467,8 @@ main {
 
 .fatness-value div {
   display: inline-block;
-  padding-right: 19px;
-  padding-left: 29px;
+  padding-right: 20px;
+  padding-left: 30px;
 }
 
 .fatness-value div:last-child {
@@ -1491,7 +1486,7 @@ main {
 .fatness-value label::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 1px;
   left: -30px;
   display: block;
   width: 18px;
@@ -1509,7 +1504,7 @@ main {
 .fatness-value input:checked ~ label::after {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 6px;
   left: -25px;
   display: block;
   width: 10px;
@@ -1538,7 +1533,7 @@ main {
 .topping .topping-checkbox {
   height: 26px;
   padding-top: 10px;
-  padding-right: 17px;
+  padding-right: 18px;
   padding-left: 15px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1547,8 +1542,8 @@ main {
 
 .topping-checkbox div {
   display: inline-block;
-  padding-right: 20px;
-  padding-left: 32px;  
+  padding-right: 22.5px;
+  padding-left: 32px;
   vertical-align: top;
 }
 
@@ -1562,13 +1557,12 @@ main {
 
 .topping-checkbox label {
   position: relative;
-  letter-spacing: 0.6px;
 }
 
 .topping-checkbox label::before {
   content: "";
   position: absolute;
-  top: -1px;
+  top: 0;
   left: -32px;
   display: block;
   width: 18px;
@@ -1586,7 +1580,7 @@ main {
 .topping-checkbox input:checked ~ label::after {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 5px;
   left: -28px;
   display: block;
   width: 9px;
@@ -1606,11 +1600,10 @@ main {
   display: inline-block;
   margin-top: 21px;
   height: 36px;
-  padding-right: 27px;
-  padding-left: 27px;
+  padding-right: 28px;
+  padding-left: 28px;
   border: 2px solid #ffffff;
   border-radius: 20px;
-  letter-spacing: 0.4px;
   vertical-align: top;
   background-color: rgba(255, 255, 255, 0.2);
   background-image: none;
